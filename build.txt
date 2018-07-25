@@ -1,0 +1,3 @@
+author = Salaro
+version = 0.1.9
+displayName = Celestial Gifts *pre alpha*
