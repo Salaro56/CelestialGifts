@@ -101,7 +101,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             if (Main.hardMode == true)
             {
-                return SpawnCondition.OverworldNightMonster.Chance * 0.5f;
+                return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
             }
             return 0f;
         }
