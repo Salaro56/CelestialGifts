@@ -13,8 +13,8 @@ namespace CelestialGifts.Items
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("The Developer's Heart");
-            Tooltip.SetDefault("It's a little broken but it's still good");
+            DisplayName.SetDefault("Hopeful Heart");
+            Tooltip.SetDefault("Even in the darkest of places, there's always a little bit of light");
         }
         public override void SetDefaults()
         {

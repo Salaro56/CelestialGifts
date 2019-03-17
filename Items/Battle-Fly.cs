@@ -24,7 +24,7 @@ namespace CelestialGifts.Items
 
             item.damage = 50;
             item.thrown = true;
-            item.noMelee = false;
+            item.noMelee = true;
             item.width = 50;
             item.height = 50;
             item.useTime = 40;

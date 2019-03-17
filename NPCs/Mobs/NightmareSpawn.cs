@@ -101,7 +101,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             if (Main.hardMode == true)
             {
-                return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
+                return SpawnCondition.OverworldNightMonster.Chance * 0.05f;
             }
             return 0f;
         }
@@ -129,7 +129,7 @@ namespace CelestialGifts.NPCs.Mobs
         public override void NPCLoot()
         {
             if (Main.rand.Next(1000) == 0)
-                Item.NewItem(npc.getRect(), mod.ItemType<DarkThoughts>());
+                Item.NewItem(npc.getRect(), mod.ItemType<Emptiness>());
             if (Main.rand.Next(20) == 0)
                 Item.NewItem(npc.getRect(), mod.ItemType<NightmareEssence>());
         }
