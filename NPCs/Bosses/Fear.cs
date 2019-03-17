@@ -13,6 +13,7 @@ using CelestialGifts.Items.Drops;
 using CelestialGifts.NPCs.Mobs;
 using CelestialGifts.Projectiles;
 using CelestialGifts.Dusts;
+using CelestialGifts.NPCs.Bosses.NightmareWorm;
 
 namespace CelestialGifts.NPCs.Bosses
 {
@@ -31,7 +32,7 @@ namespace CelestialGifts.NPCs.Bosses
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Fear - The Riftwalker");
-            Main.npcFrameCount[npc.type] = 1;
+            Main.npcFrameCount[npc.type] = 6;
         }
 
         public override void SetDefaults()
@@ -41,8 +42,9 @@ namespace CelestialGifts.NPCs.Bosses
             npc.damage = 70; // The base damage value the boss has on Normal
             npc.defense = 40; // The base defense on Normal
             npc.knockBackResist = 0f; // No knockback
-            npc.width = 10;
-            npc.height = 500;
+            npc.width = 100;
+            npc.height = 100;
+            npc.scale = 2f;
             npc.value = Item.buyPrice(0,10, 30, 0);
             npc.npcSlots = 5f; // The higher the number, the more NPC slots this NPC takes.
             npc.boss = true; // Is a boss
@@ -51,7 +53,7 @@ namespace CelestialGifts.NPCs.Bosses
             npc.noTileCollide = true; // Will not collide with the tiles. 
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
-            music = MusicID.LunarBoss;
+            music = MusicID.Boss5;
             npc.value = Item.buyPrice(0, 20, 15, 0);
         }
 
@@ -83,7 +85,7 @@ namespace CelestialGifts.NPCs.Bosses
         {
 
             //stage one
-            if (NPC.AnyNPCs(mod.NPCType("Nightmare")))
+            if (NPC.AnyNPCs(mod.NPCType("Nightmare")) || NPC.AnyNPCs(mod.NPCType<NightmareHead>()))
             {
 
                 npc.dontTakeDamage = true;
@@ -112,11 +114,11 @@ namespace CelestialGifts.NPCs.Bosses
                     npc.defense = 100;
                     npc.damage = 120;
                 }
-                else
+                else if (npc.life > 500)
                 {
                     npc.defense = 20;
                     npc.damage = 30;
-                    music = MusicID.Rain;
+                    music = MusicID.RainSoundEffect;
                 }
             }
         }
@@ -157,6 +159,14 @@ namespace CelestialGifts.NPCs.Bosses
             return (float)Math.Sqrt(mag.X * mag.X + mag.Y * mag.Y);
         }
 
+        public override void FindFrame(int frameHeight)
+        {
+            npc.frameCounter += 1;
+            npc.frameCounter %= 100;
+            int frame = (int)(npc.frameCounter / 6);
+            if (frame >= Main.npcFrameCount[npc.type]) frame = 0;
+            npc.frame.Y = frame * frameHeight;
+        }
 
         private void SpawnNPC()
         {
@@ -164,15 +174,19 @@ namespace CelestialGifts.NPCs.Bosses
             {
                 NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
                 NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
+                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
 
                 if (npc.life <= 9000)
                 {
-                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
-                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
                 }
                 else if (npc.life <= 6000)
                 {
-                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
                 }
             }           
             spawn = false;

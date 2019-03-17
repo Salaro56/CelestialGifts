@@ -1,4 +1,4 @@
 author = Salaro
-version = 0.2.0.2
+version = 0.2.0.3
 displayName = Celestial Gifts *pre alpha*
 homepage = https://terrariamods.gamepedia.com/Celestial_Gifts

@@ -19,7 +19,7 @@ namespace CelestialGifts.Items
 
         public override void SetDefaults()
         {
-            item.damage = 60;
+            item.damage = 80;
             item.magic = true;
             item.width = 36;
             item.height = 36;
@@ -40,8 +40,9 @@ namespace CelestialGifts.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Hellstone, 15);
+            recipe.AddIngredient(ItemID.Book);
             recipe.AddIngredient(mod.ItemType<LunarBlast>());
-            recipe.AddTile(TileID.Hellforge);
+            recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this);
             recipe.AddRecipe();
 

@@ -14,7 +14,7 @@ namespace CelestialGifts.Items       ///We need this to basically indicate the f
         }
         public override void SetDefaults()
         {
-            item.damage = 170;  //The damage stat for the Weapon.
+            item.damage = 150;  //The damage stat for the Weapon.
             item.mana = 20;      //this defines how many mana this weapon use
             item.width = 56;    //The size of the width of the hitbox in pixels.
             item.height = 56;     //The size of the height of the hitbox in pixels.

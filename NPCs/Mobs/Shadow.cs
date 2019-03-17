@@ -15,7 +15,7 @@ namespace CelestialGifts.NPCs.Mobs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Shadow");
-            Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
+            Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Reaper];
         }
 
         public override void SetDefaults()
@@ -25,21 +25,40 @@ namespace CelestialGifts.NPCs.Mobs
             npc.damage = 15;
             npc.defense = 4;
             npc.lifeMax = 50;
-            npc.HitSound = SoundID.NPCHit1;
+            npc.HitSound = SoundID.NPCDeath6;
             npc.DeathSound = SoundID.NPCDeath6;
             npc.value = 60f;
             npc.knockBackResist = 1f;
             npc.aiStyle = 3;
-            aiType = NPCID.Zombie;
-            animationType = NPCID.Zombie;
-            npc.noGravity = false;
+            aiType = NPCID.Reaper;
+            animationType = NPCID.Reaper;
+            npc.noGravity = true;
+            npc.noTileCollide = true;
             npc.stepSpeed = 10f;
         }
 
+        public override void AI()
+        {
+            npc.alpha = 130;
+
+            if (Main.hardMode == true)
+            {
+                npc.damage = 50;
+                npc.defense = 10;
+                npc.lifeMax = 100;
+            }
+
+            for (int i = 0; i < 1; i++)
+            {
+                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<DreamDust>(), npc.velocity.X, npc.velocity.Y, 230, Color.Black);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                Main.dust[dust].noGravity = false; //this make so the dust is effected by gravity
+                Main.dust[dust].velocity *= 1f;
+            }
+        }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 1f;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
         }
 
         public override void FindFrame(int frameHeight)
@@ -59,12 +78,6 @@ namespace CelestialGifts.NPCs.Mobs
                 Main.dust[dust].noGravity = true; //this make so the dust has no gravity
                 Main.dust[dust].velocity *= 0.5f;
             }
-        }
-
-        public override void NPCLoot()
-        {
-            if (Main.rand.Next(50) == 0)
-                Item.NewItem(npc.getRect(), mod.ItemType<TierOneRift>());
         }
     }
 }

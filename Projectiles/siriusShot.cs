@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CelestialGifts.Projectiles.WeapProj;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -48,7 +49,7 @@ namespace CelestialGifts.Projectiles
         {
             int DustID = Dust.NewDust(new Vector2(projectile.position.X * 5, projectile.position.Y * 5), projectile.width + 4, projectile.height + 2, 36, projectile.velocity.X * 2f, projectile.velocity.Y * 2f, 120, default(Color), 3f);
             int rand = Main.rand.Next(5); //Generates integers from 0 to 4
-            Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, 696, (int)(projectile.damage * 1.5), projectile.knockBack, Main.myPlayer); // 296 is the explosion from the Inferno Fork
+            Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 20f, 0, 0, mod.ProjectileType<WhiteExplosion>(), (int)(projectile.damage * 1.5), projectile.knockBack, Main.myPlayer); // 296 is the explosion from the Inferno Fork
             Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14); //Bullet noise
         }
 

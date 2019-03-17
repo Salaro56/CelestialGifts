@@ -77,6 +77,9 @@
     <Compile Include="NPCs\Bosses\Death.cs" />
     <Compile Include="NPCs\Bosses\Fear.cs" />
     <Compile Include="NPCs\Bosses\Nightmare.cs" />
+    <Compile Include="NPCs\Bosses\NightmareWorm\NightmareBody.cs" />
+    <Compile Include="NPCs\Bosses\NightmareWorm\NightmareHead.cs" />
+    <Compile Include="NPCs\Bosses\NightmareWorm\NightmareTail.cs" />
     <Compile Include="NPCs\Bosses\Pain.cs" />
     <Compile Include="NPCs\Mobs\NightmareBones.cs" />
     <Compile Include="NPCs\Mobs\NightmareSlime.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="Projectiles\Pets\SolidRock.cs" />
     <Compile Include="Projectiles\siriusShot.cs" />
     <Compile Include="Projectiles\starshot.cs" />
+    <Compile Include="Projectiles\Test Class.cs" />
     <Compile Include="Projectiles\WeapProj\Blue_Force.cs" />
     <Compile Include="Projectiles\WeapProj\Green_Force.cs" />
     <Compile Include="Projectiles\WeapProj\Purple_Force.cs" />

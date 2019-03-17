@@ -37,6 +37,7 @@ namespace CelestialGifts.Items
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.FallenStar);
             recipe.AddIngredient(ItemID.MusketBall, 10);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 10);
             recipe.AddRecipe();
 

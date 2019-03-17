@@ -8,6 +8,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using CelestialGifts.Projectiles;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace CelestialGifts.Items
 {
@@ -18,7 +19,6 @@ namespace CelestialGifts.Items
             DisplayName.SetDefault("Solid Star");
             Tooltip.SetDefault("Heaven's piercing light. A gift from Solid");
         }
-
         public override void SetDefaults()
         {
             item.damage = 700;
@@ -38,17 +38,6 @@ namespace CelestialGifts.Items
             item.UseSound = SoundID.Item5;
             item.useAmmo = mod.ItemType<SiriusShot>();
             item.shoot = mod.ProjectileType<siriusShot>();
-        }
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.FallenStar, 10);
-            recipe.AddIngredient(mod.ItemType<Eclipse_Core>());
-            recipe.AddIngredient(ItemID.LunarBar, 20);
-            recipe.AddIngredient(ItemID.FragmentVortex, 15);
-            recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
     }
 }

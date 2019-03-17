@@ -19,8 +19,8 @@ namespace CelestialGifts.Items
         {
             item.damage = 10;
             item.ranged = true;
-            item.width = 100;
-            item.height = 90;
+            item.width = 30;
+            item.height = 27;
             item.maxStack = 999;
             item.consumable = true;
             item.knockBack = 1f;
@@ -28,7 +28,7 @@ namespace CelestialGifts.Items
             item.rare = 2;
             item.shoot = mod.ProjectileType<starshot>();
             item.ammo = mod.ItemType("Starshot");
-            item.scale = 0.4f;
+            item.scale = 0.1f;
 
         }
 
@@ -37,6 +37,7 @@ namespace CelestialGifts.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.FallenStar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 50);
             recipe.AddRecipe();
 

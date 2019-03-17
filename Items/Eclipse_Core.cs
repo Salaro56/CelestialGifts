@@ -19,7 +19,7 @@ namespace CelestialGifts.Items
 
         public override void SetDefaults()
         {
-            item.damage = 100;
+            item.damage = 70;
             item.ranged = true;
             item.width = 50;
             item.height = 31;
@@ -43,8 +43,9 @@ namespace CelestialGifts.Items
             ModRecipe recipe = new ModRecipe(mod); //Creating a new recipe to be added to 
             recipe.AddIngredient(mod.ItemType<StarFire>());
             recipe.AddIngredient(ItemID.FallenStar, 10);
-            recipe.AddIngredient(ItemID.HallowedBar, 15);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddIngredient(ItemID.HellstoneBar, 15);
+            recipe.AddIngredient(ItemID.Emerald, 5);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this); //Set the result of the recipe to this item (this refers to the class itself)
             recipe.AddRecipe(); //Add this recipe
         }

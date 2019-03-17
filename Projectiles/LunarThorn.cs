@@ -39,6 +39,38 @@ namespace CelestialGifts.Projectiles       //We need this to basically indicate 
                 Main.dust[dust].noGravity = true; //this make so the dust has no gravity
                 Main.dust[dust].velocity *= 2.5f;
             }
+            //Getting the npc to fire at
+            for (int i = 0; i < 200; i++)
+            {
+                NPC target = Main.npc[i];
+
+                //Getting the shooting trajectory
+                float shootToX = target.position.X + (float)target.width * 0.5f - projectile.Center.X;
+                float shootToY = target.position.Y + (float)target.height * 0.5f - projectile.Center.Y;
+                float distance = (float)System.Math.Sqrt((double)(shootToX * shootToX + shootToY * shootToY));
+
+                //If the distance between the projectile and the live target is active
+                if (distance < 800f && !target.friendly && target.active)  //distance < 520 this is the projectile1 distance from the target if the tarhet is in that range the this projectile1 will shot the projectile2
+                {
+                    if (projectile.ai[0] > 1f)//this make so the projectile1 shoot a projectile every 2 seconds(60 = 1 second so 120 = 2 seconds) 
+                    {
+                        //Dividing the factor of 2f which is the desired velocity by distance
+                        distance = 2f / distance;
+
+                        //Multiplying the shoot trajectory with distance times a multiplier if you so choose to
+                        shootToX *= distance * 5;
+                        shootToY *= distance * 5;
+                        int damage = 100;  //this is the projectile2 damage                   
+                                          //Shoot projectile and set ai back to 0
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, mod.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
+                        Projectile.NewProjectile(projectile.Center.X * 2, projectile.Center.Y * 2, shootToX, shootToY, mod.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X * 0.5f, projectile.Center.Y * 0.5f, shootToX, shootToY, mod.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f);
+                        Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 24); //24 is the sound, so when this projectile is shot will make that sound
+                        projectile.ai[0] = 0f;
+                    }
+                }
+            }
+            projectile.ai[0] += 1f;
         }
 
         public override void AI()
@@ -74,9 +106,9 @@ namespace CelestialGifts.Projectiles       //We need this to basically indicate 
                         //Multiplying the shoot trajectory with distance times a multiplier if you so choose to
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
-                        int damage = 500;  //this is the projectile2 damage                   
+                        int damage = 150;  //this is the projectile2 damage                   
                                           //Shoot projectile and set ai back to 0
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, ProjectileID.Blizzard, damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX * 5, shootToY * 5, mod.ProjectileType<LunahLazah>(), damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
                         Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 24); //24 is the sound, so when this projectile is shot will make that sound
                         projectile.ai[0] = 0f;
                     }
