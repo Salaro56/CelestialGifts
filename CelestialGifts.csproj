@@ -7,8 +7,8 @@
     <ProjectGuid>{8298EAB6-0586-4BDA-9483-83624B66B13A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WillsMod</RootNamespace>
-    <AssemblyName>WillsMod</AssemblyName>
+    <RootNamespace>CelestialGifts</RootNamespace>
+    <AssemblyName>CelestialGifts</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -108,6 +108,7 @@
     <Compile Include="Projectiles\Test Class.cs" />
     <Compile Include="Projectiles\WeapProj\Blue_Force.cs" />
     <Compile Include="Projectiles\WeapProj\Green_Force.cs" />
+    <Compile Include="Projectiles\WeapProj\HolyFire.cs" />
     <Compile Include="Projectiles\WeapProj\Purple_Force.cs" />
     <Compile Include="Projectiles\WeapProj\Red_Force.cs" />
     <Compile Include="Projectiles\WeapProj\FlyAxe.cs" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <Content Include="NPCs\Town_NPCs\TownGuard.png" />
     <Content Include="NPCs\Town_NPCs\TownGuard_Head.png" />
+    <Content Include="Projectiles\WeapProj\HolyFire.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

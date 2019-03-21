@@ -10,3 +10,7 @@ C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\WillsM
 C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\WillsMod\obj\Debug\CelestialGifts.csproj.CopyComplete
 C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\WillsMod\obj\Debug\WillsMod.dll
 C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\WillsMod\obj\Debug\WillsMod.pdb
+C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\CelestialGifts\obj\Debug\CelestialGifts.csprojResolveAssemblyReference.cache
+C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\CelestialGifts\obj\Debug\CelestialGifts.csproj.CoreCompileInputs.cache
+C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\CelestialGifts\obj\Debug\WillsMod.dll
+C:\Users\salar\OneDrive\Documents\My Games\Terraria\ModLoader\Mod Sources\CelestialGifts\obj\Debug\WillsMod.pdb

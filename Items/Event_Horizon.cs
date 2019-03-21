@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using CelestialGifts.Projectiles;
+using CelestialGifts.Items;
 
 namespace CelestialGifts.Items
 {
@@ -12,7 +13,7 @@ namespace CelestialGifts.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Event Horizon");
-            Tooltip.SetDefault("Leading technology mixed with divine energy to create a deadly killing machine");
+            Tooltip.SetDefault("Leading technology mixed with divine energy to create a deadly killing machine");         
         }
 
 
@@ -35,14 +36,17 @@ namespace CelestialGifts.Items
             item.autoReuse = true;
             item.UseSound = SoundID.Item12;
             item.shoot = mod.ProjectileType<Nebula>();
+            item.crit = 60;
         }
+
+
 
         public override void AddRecipes() //Adding recipes
         {
             ModRecipe recipe = new ModRecipe(mod); //Creating a new recipe to be added to 
             recipe.AddIngredient(mod.ItemType<Eclipse_Core>());
             recipe.AddIngredient(ItemID.FallenStar, 10);
-            recipe.AddIngredient(ItemID.HallowedBar, 25);
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 25);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this); //Set the result of the recipe to this item (this refers to the class itself)
             recipe.AddRecipe(); //Add this recipe

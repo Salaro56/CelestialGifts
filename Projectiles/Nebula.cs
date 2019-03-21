@@ -6,6 +6,7 @@ using Microsoft.Xna;
 using Microsoft.Xna.Framework.Graphics;
 using CelestialGifts;
 using CelestialGifts.Dusts;
+using System.Collections.Generic;
 
 namespace CelestialGifts.Projectiles
 {
@@ -27,38 +28,38 @@ namespace CelestialGifts.Projectiles
             projectile.ignoreWater = true;
             projectile.scale = 1;
             projectile.penetrate = 1;
+            projectile.alpha = 330;
         }
 
         public override void AI()
         {
+            projectile.localAI[0] += 1f;
+			if (projectile.localAI[0] > 9f)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					Vector2 projectilePosition = projectile.position;
+					projectilePosition -= projectile.velocity * ((float)i * 0.25f);
+					projectile.alpha = 0;
+					// Important, changed 173 to 178!
+					int dust = Dust.NewDust(projectilePosition, 1, 1, 173, 0f, 0f, 255, default(Color), 1f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].position = projectilePosition;
+					Main.dust[dust].scale = (float)Main.rand.Next(70, 110) * 0.013f;
+					Main.dust[dust].velocity *= 0.2f;
+				}
+			}
             projectile.light = 0.9f;
-            projectile.alpha = 128;
+            if (projectile.alpha > 0)
+                {
+                    projectile.alpha -= 1;
+                }
         }
 
-    
-
-        // Some advanced drawing because the texture image isn't centered or symetrical.
-       /* public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+        public override void DrawBehind(int index, List<int> drawCacheProjsBehindNPCsAndTiles, List<int> drawCacheProjsBehindNPCs, List<int> drawCacheProjsBehindProjectiles, List<int> drawCacheProjsOverWiresUI)
         {
-            SpriteEffects spriteEffects = SpriteEffects.None;
-            if (projectile.spriteDirection == -5)
-            {
-                spriteEffects = SpriteEffects.FlipHorizontally;
-            }
-            Texture2D texture = Main.projectileTexture[projectile.type];
-            int frameHeight = Main.projectileTexture[projectile.type].Height / Main.projFrames[projectile.type];
-            int startY = frameHeight * projectile.frame;
-            Rectangle sourceRectangle = new Rectangle(0, startY, texture.Width, frameHeight);
-            Vector2 origin = sourceRectangle.Size() / 2f;
-            origin.X = (float)((projectile.spriteDirection == 1) ? (sourceRectangle.Width - 20) : 20);
-
-            Color drawColor = projectile.GetAlpha(lightColor);
-            Main.spriteBatch.Draw(texture,
-                projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY),
-                sourceRectangle, drawColor, projectile.rotation, origin, projectile.scale, spriteEffects, 0f);
-
-            return false;
-        } */
+            base.DrawBehind(index, drawCacheProjsBehindNPCsAndTiles, drawCacheProjsBehindNPCs, drawCacheProjsBehindProjectiles, drawCacheProjsOverWiresUI);
+        }
 
         public override void Kill(int timeLeft)
         {

@@ -1,26 +1,27 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CelestialGifts.Projectiles;
+using CelestialGifts.Projectiles.WeapProj;
 
 namespace CelestialGifts.Items
 {
     public class Divine_Domain : ModItem
     {
+        private Vector2 position;
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Divine's Domain");
-            Tooltip.SetDefault("You control the domain of the divine itself");
+            Tooltip.SetDefault("The power of the divine at your finger tips");
         }
         public override void SetDefaults()
         {
-            item.damage = 170;
+            item.damage = 120;
             item.melee = true;
             item.width = 100;
             item.height = 100;
-            item.scale = 1;
+            item.scale = 0.8f;
             item.useTime = 30;
             item.useAnimation = 20;
             item.useStyle = 1;
@@ -29,9 +30,19 @@ namespace CelestialGifts.Items
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.shoot = 700;
-            item.shootSpeed = 30f;
+            item.shoot = mod.ProjectileType<HolyFire>();
+            item.shootSpeed = 7f;
         }
+
+        public override void MeleeEffects(Player player, Rectangle hitbox)
+        {
+            if (Main.rand.NextBool(3))
+            {
+                int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), 20, hitbox.Height, DustID.Silver, item.velocity.X * 0.25f, item.velocity.Y * 0.25f, 0, default(Color), 1f);
+                Main.dust[dust].noGravity = true;
+            }
+        }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
@@ -41,17 +52,6 @@ namespace CelestialGifts.Items
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
-        }
-
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            int numberProjectiles = 4 + Main.rand.Next(2); //This defines how many projectiles to shot. 4 + Main.rand.Next(2)= 4 or 5 shots
-            for (int i = 0; i < numberProjectiles; i++)
-            {
-                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15)); // This defines the projectiles random spread . 30 degree spread.
-                Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
-            }
-            return false;
         }
     }
 }

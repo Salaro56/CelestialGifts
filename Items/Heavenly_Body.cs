@@ -1,9 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CelestialGifts.Projectiles;
 
 namespace CelestialGifts.Items
 {

@@ -3,6 +3,7 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using CelestialGifts.Items;
 using CelestialGifts.Projectiles;
 
 namespace CelestialGifts.Items
@@ -11,26 +12,30 @@ namespace CelestialGifts.Items
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("The King's Right");
-            Tooltip.SetDefault("The sky is yours");
+            DisplayName.SetDefault("King's Right");
+            Tooltip.SetDefault("Everything the sun touches is your domain");
         }
         public override void SetDefaults()
         {
-            item.damage = 80;
+            item.damage = 50;
             item.melee = true;
-            item.width = 10;
+            item.width = 70;
             item.height = 70;
-            item.scale = 1;
+            item.scale = 0.7f;
             item.useTime = 30;
             item.useAnimation = 20;
             item.useStyle = 1;
             item.knockBack = 3;
-            item.value = 10000;
+            item.value = 21500;
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = false;
             item.shoot = mod.ProjectileType<Kings_Wave>();
-            item.shootSpeed = 50f;
+            item.shootSpeed = 10f;
+        }
+        public override void MeleeEffects(Player player, Rectangle hitbox)
+        {
+            Lighting.AddLight(item.Center, 0.9f, 0.1f, 0.3f);
         }
         public override void AddRecipes()
         {

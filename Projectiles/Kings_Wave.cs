@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System;
 using CelestialGifts.Dusts;
 using Microsoft.Xna.Framework.Graphics;
+using CelestialGifts.Projectiles.WeapProj;
 
 namespace CelestialGifts.Projectiles
 {
@@ -17,27 +18,38 @@ namespace CelestialGifts.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 32;
-            projectile.height = 32;
-            projectile.aiStyle = 18;
+            projectile.width = 50;
+            projectile.height = 70;
+            projectile.aiStyle = -1;
             projectile.hostile = false;
             projectile.friendly = true;
             projectile.melee = true;
-            projectile.penetrate = 3;
-            projectile.damage = 80;
-            projectile.scale = 2;
+            projectile.penetrate = -1;
+            projectile.damage = 50;
+            projectile.scale = 1;
+            projectile.tileCollide = false;
+            projectile.alpha = 125;
         }
-
+        public override void AI()
+        {
+            projectile.ai[0] += 1f;
+            if(projectile.ai[0] >= 30f)
+                {
+                    projectile.Kill();
+                }
+            projectile.rotation = projectile.velocity.ToRotation();
+            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Fire, projectile.velocity.X * 0.25f, projectile.velocity.Y * 0.25f, 80, default(Color), 1.2f);
+            int dust2 =Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Fire, projectile.velocity.X * 0.15f, projectile.velocity.Y * 0.15f, 60, default(Color), 0.7f);
+            int dust3 = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Fire, projectile.velocity.X * 0.35f, projectile.velocity.Y * 0.35f, 100, default(Color), 1.2f);
+            Main.dust[dust].noGravity = true;
+            Main.dust[dust2].noGravity = true;
+            Main.dust[dust3].noGravity = true;
+        }
         public override void Kill(int timeLeft)
         {
-            Main.PlaySound(2, projectile.Center, 62);    //this make so when this projectile disappear will make this sound. you can find all the sound ID here: https://github.com/bluemagic123/tModLoader/wiki/Vanilla-Sound-IDs
+            Projectile.NewProjectile(projectile.Center, (projectile.velocity * 0), 296, projectile.damage, 5f);
+            Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14); //Bullet noise
 
-            for (int i = 0; i < 20; i++) //this i a for loop tham make the dust spawn , the higher is the value the more dust will spawn
-            {
-                int dust = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, mod.DustType<EtherealFlame>(), projectile.velocity.X * 1.2f, projectile.velocity.Y * 1.2f, 120, default(Color), 2.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
-                Main.dust[dust].noGravity = true; //this make so the dust has no gravity
-                Main.dust[dust].velocity *= 1.5f;
-            }
         }
     }
 }

@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Items"
+    "\\Items",
+    "\\Projectiles\\WeapProj"
   ],
-  "SelectedNode": "\\build.txt",
+  "SelectedNode": "\\Projectiles",
   "PreviewInSolutionExplorer": false
 }
