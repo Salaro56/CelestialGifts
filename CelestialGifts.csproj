@@ -42,8 +42,8 @@
     <Compile Include="Items\Armour\PoliceKep.cs" />
     <Compile Include="Items\Battle-Fly.cs" />
     <Compile Include="Items\BossSummons\TierOneRift.cs" />
+    <Compile Include="Items\Emptiness.cs" />
     <Compile Include="Items\Weapons\Darkhart.cs" />
-    <Compile Include="Items\DarkThoughts.cs" />
     <Compile Include="Items\Developers_Heart.cs" />
     <Compile Include="Items\LunicRune.cs" />
     <Compile Include="Items\Divine_Domain.cs" />
@@ -151,7 +151,6 @@
   <ItemGroup>
     <Content Include="NPCs\Town_NPCs\TownGuard.png" />
     <Content Include="NPCs\Town_NPCs\TownGuard_Head.png" />
-    <Content Include="Projectiles\WeapProj\HolyFire.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
