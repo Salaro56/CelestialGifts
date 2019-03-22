@@ -55,7 +55,7 @@ namespace YourModName.NPCs
                 case NPCID.ArmsDealer:
                     if (!Main.hardMode)
                     {
-
+                        shop.item[nextSlot].SetDefaults(mod.ItemType<Starshot>());
                     }
                     else
                     {
