@@ -36,12 +36,13 @@ namespace CelestialGifts.Items
             item.useAmmo = mod.ItemType<Starshot>();
             item.UseSound = SoundID.Item11;
             item.shoot = 10;
+            item.scale = 0.5f;
         }
 
         public override void AddRecipes() //Adding recipes
         {
             ModRecipe recipe = new ModRecipe(mod); //Creating a new recipe to be added to 
-            recipe.AddIngredient(ItemID.Minishark);
+            recipe.AddIngredient(ItemID.StarCannon);
             recipe.AddIngredient(ItemID.FallenStar, 10);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this); //Set the result of the recipe to this item (this refers to the class itself)

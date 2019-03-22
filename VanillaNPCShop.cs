@@ -23,12 +23,15 @@ namespace YourModName.NPCs
                         Mod CalamityMod = ModLoader.GetMod("CalamityMod");
                         if (CalamityMod != null)
                         {
-                            shop.item[nextSlot].SetDefaults(CalamityMod.ItemType("AnarchyBlade"));
-                            nextSlot++;
-                            if (NPC.downedMoonlord)
+                            if (Main.rand.Next(3) == 0)
                             {
-                                shop.item[nextSlot].SetDefaults(CalamityMod.ItemType("BarofLife"));
+                                shop.item[nextSlot].SetDefaults(CalamityMod.ItemType("AnarchyBlade"));
                                 nextSlot++;
+                                if (NPC.downedMoonlord)
+                                {
+                                    shop.item[nextSlot].SetDefaults(CalamityMod.ItemType("BarofLife"));
+                                    nextSlot++;
+                                }
                             }
                         }
                     }
@@ -50,11 +53,14 @@ namespace YourModName.NPCs
             switch (type)
             {
                 case NPCID.ArmsDealer:
-                    if (Main.hardMode)
+                    if (!Main.hardMode)
+                    {
+
+                    }
+                    else
                     {
                         shop.item[nextSlot].SetDefaults(mod.ItemType<Starshot>());
                     }
-                    else { }
                     break;
             }
             switch (type)

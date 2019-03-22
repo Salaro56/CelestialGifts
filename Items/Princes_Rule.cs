@@ -46,13 +46,40 @@ namespace CelestialGifts.Items
             target.AddBuff(BuffID.OnFire, 120);
         }
 
-
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.FallenStar, 10);
-            recipe.AddIngredient(ItemID.GoldBroadsword);
+            recipe.AddIngredient(ItemID.LightsBane);
             recipe.AddIngredient(ItemID.GoldCrown);
+            recipe.AddIngredient(ItemID.GoldenKey);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FallenStar, 10);
+            recipe.AddIngredient(ItemID.LightsBane);
+            recipe.AddIngredient(ItemID.PlatinumCrown);
+            recipe.AddIngredient(ItemID.GoldenKey);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FallenStar, 10);
+            recipe.AddIngredient(ItemID.BloodButcherer);
+            recipe.AddIngredient(ItemID.GoldCrown);
+            recipe.AddIngredient(ItemID.GoldenKey);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FallenStar, 10);
+            recipe.AddIngredient(ItemID.BloodButcherer);
+            recipe.AddIngredient(ItemID.PlatinumCrown);
+            recipe.AddIngredient(ItemID.GoldenKey);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

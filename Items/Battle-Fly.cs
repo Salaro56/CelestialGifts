@@ -15,7 +15,7 @@ namespace CelestialGifts.Items
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Batlle-Fly");
+            DisplayName.SetDefault("Battle-Fly");
             Tooltip.SetDefault("FIGHT WITH THE POWER OF BUTTERFLIES!");
         }
 

@@ -40,9 +40,21 @@ namespace CelestialGifts.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.HellstoneBar, 20);
+            recipe.AddIngredient(ItemID.SoulofMight, 20);
+            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddIngredient(ItemID.HellstoneBar, 10);
             recipe.AddIngredient(mod.ItemType<Princes_Rule>());
             recipe.AddIngredient(ItemID.GoldCrown);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.SoulofMight, 20);
+            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddIngredient(ItemID.HellstoneBar, 10);
+            recipe.AddIngredient(mod.ItemType<Princes_Rule>());
+            recipe.AddIngredient(ItemID.PlatinumCrown);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

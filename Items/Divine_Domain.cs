@@ -47,8 +47,20 @@ namespace CelestialGifts.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.HallowedBar, 20);
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
+            recipe.AddIngredient(ItemID.AngelWings);
             recipe.AddIngredient(mod.ItemType<Kings_Right>());
             recipe.AddIngredient(ItemID.GoldCrown);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.HallowedBar, 20);
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
+            recipe.AddIngredient(ItemID.AngelWings);
+            recipe.AddIngredient(mod.ItemType<Kings_Right>());
+            recipe.AddIngredient(ItemID.PlatinumCrown);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
