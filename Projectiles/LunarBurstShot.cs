@@ -57,6 +57,7 @@ namespace CelestialGifts.Projectiles
         public override void Kill(int timeLeft)
         {
             Main.PlaySound(2, projectile.Center, 62);    //this make so when this projectile disappear will make this sound. you can find all the sound ID here: https://github.com/bluemagic123/tModLoader/wiki/Vanilla-Sound-IDs
+            projectile.netUpdate = true;
 
             for (int i = 0; i < 20; i++) //this i a for loop tham make the dust spawn , the higher is the value the more dust will spawn
             {

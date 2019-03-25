@@ -22,7 +22,7 @@ namespace CelestialGifts.Items
             item.width = 100;
             item.height = 100;
             item.scale = 0.8f;
-            item.useTime = 30;
+            item.useTime = 90;
             item.useAnimation = 20;
             item.useStyle = 1;
             item.knockBack = 3;
