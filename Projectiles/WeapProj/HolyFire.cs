@@ -17,7 +17,6 @@ namespace CelestialGifts.Projectiles.WeapProj
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Holy Fire");
-            Main.projFrames[projectile.type] = 3;
         }
 
         public override void SetDefaults()
@@ -35,7 +34,7 @@ namespace CelestialGifts.Projectiles.WeapProj
         public override void AI()
         {
 
-            projectile.rotation = projectile.velocity.ToRotation();
+            projectile.rotation += 0.8f * (float)projectile.direction;
 
             projectile.ai[0] += 1f;
             if(projectile.ai[0] >= 32f)
@@ -46,6 +45,12 @@ namespace CelestialGifts.Projectiles.WeapProj
             if(projectile.velocity.Y > 20f)
             {
                 projectile.velocity.Y = 20f;
+            }
+
+            for(int d = 0; d < 10; d++)
+            {
+                int dust = Dust.NewDust(projectile.position, 26, 26, 262, projectile.velocity.X * 0.25f, projectile.velocity.Y * 0.25f, 255, default(Color), 0.7f);
+                Main.dust[dust].noGravity = true;
             }
         }
 
@@ -68,7 +73,7 @@ namespace CelestialGifts.Projectiles.WeapProj
         public override void Kill(int timeLeft)
         {
             Main.PlaySound(SoundID.Item14, projectile.position);
-            for (int d = 0; d < 70; d++)
+            for (int d = 0; d < 100; d++)
             {
                 int dust = Dust.NewDust((projectile.position), 50, 50, 262, projectile.velocity.X * 0, projectile.velocity.Y * 0, 55, default(Color), 1);
                 int dust2 = Dust.NewDust(new Vector2(projectile.position.X - 16, projectile.position.Y + 16), 90, 10, 262, projectile.velocity.X * 0, projectile.velocity.Y * 0, 55, default(Color), 1);

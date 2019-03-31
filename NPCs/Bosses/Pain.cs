@@ -9,8 +9,8 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using WillsWorld;
-using CelestialGifts.Items;
-using CelestialGifts.Projectiles;
+using CelestialGifts.Items.Drops;
+using CelestialGifts.Projectiles.HostileProj;
 
 namespace CelestialGifts.NPCs.Bosses
 {

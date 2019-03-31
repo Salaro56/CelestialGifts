@@ -3,11 +3,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using CelestialGifts.Dusts;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using CelestialGifts.Projectiles;
-using CelestialGifts.Items;
+using CelestialGifts.Items.BossSummons;
 using CelestialGifts.Items.Drops;
 using System;
+using CelestialGifts.Projectiles.HostileProj;
 
 namespace CelestialGifts.NPCs.Mobs
 {

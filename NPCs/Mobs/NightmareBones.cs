@@ -5,7 +5,7 @@ using CelestialGifts.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CelestialGifts.Projectiles;
-using CelestialGifts.Items;
+using CelestialGifts.Items.BossSummons;
 using CelestialGifts.Items.Drops;
 
 namespace CelestialGifts.NPCs.Mobs

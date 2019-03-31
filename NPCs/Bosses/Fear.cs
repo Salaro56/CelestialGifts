@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using CelestialGifts.Items.BossSummons;
 using CelestialGifts.Items.Drops;
 using CelestialGifts.NPCs.Mobs;
-using CelestialGifts.Projectiles;
+using CelestialGifts.Projectiles.HostileProj;
 using CelestialGifts.Dusts;
 using CelestialGifts.NPCs.Bosses.NightmareWorm;
 

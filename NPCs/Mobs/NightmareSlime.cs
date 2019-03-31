@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using CelestialGifts.Dusts;
-using CelestialGifts.Items;
+using CelestialGifts.Items.BossSummons;
 using CelestialGifts.Items.Drops;
 
 namespace CelestialGifts.NPCs.Mobs

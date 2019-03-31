@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,13 +14,13 @@ namespace CelestialGifts.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("The Blackhart");
-            Tooltip.SetDefault("A special sword named after a strong warrior");
+            DisplayName.SetDefault("Blackhart");
+            Tooltip.SetDefault("MUDAMUDAMUDAMDUAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDA");
         }
 
         public override void SetDefaults()
         {
-            item.damage = 100;
+            item.damage = 50;
             item.melee = true;
             item.width = 40;
             item.height = 80;
@@ -31,7 +32,13 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.scale = 3;  
+            item.scale = 2;  
         }
+
+        public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+        {
+            target.AddBuff(BuffID.Ichor, 60);
+        }
+
     }
 }
