@@ -7,18 +7,18 @@ using CelestialGifts.Projectiles.WeapProj;
 namespace CelestialGifts.Items.Ammo
 {
 
-    public class Energy_Clip : ModItem
+    public class ChloroClip : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Energy Clip");
-            Tooltip.SetDefault("A gun clip filled with condensed plasma for your shooting pleasure");
+            DisplayName.SetDefault("Chloro Clip");
+            Tooltip.SetDefault("A strange green energy emits from this energy clip");
 
         }
 
         public override void SetDefaults()
         {
-            item.damage = 15;
+            item.damage = 30;
             item.ranged = true;
             item.width = 15;
             item.height = 15;
@@ -27,7 +27,7 @@ namespace CelestialGifts.Items.Ammo
             item.knockBack = 1f;
             item.value = 50;
             item.rare = 2;
-            item.shoot = mod.ProjectileType<Energy_Shot>();
+            item.shoot = mod.ProjectileType<Nebula>();
             item.ammo = mod.ItemType("Energy_Clip");
 
         }
@@ -37,9 +37,9 @@ namespace CelestialGifts.Items.Ammo
         {
                 ModRecipe recipe = new ModRecipe(mod);
                 recipe.AddIngredient(ItemID.FallenStar);
-                recipe.AddIngredient(ItemID.MusketBall, 10);
-                recipe.AddTile(TileID.Anvils);
-                recipe.SetResult(this, 10);
+                recipe.AddIngredient(ItemID.ChlorophyteBullet, 5);
+                recipe.AddTile(TileID.MythrilAnvil);
+                recipe.SetResult(this, 15);
                 recipe.AddRecipe();
         }
 

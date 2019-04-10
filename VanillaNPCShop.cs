@@ -21,6 +21,11 @@ namespace YourModName.NPCs
                             shop.item[nextSlot].SetDefaults(mod.ItemType<Blackheart>());
                             nextSlot++;
                         }
+                        if (Main.rand.Next(10) == 0)
+                        {
+                            shop.item[nextSlot].SetDefaults(mod.ItemType<LokiEgg>());
+                            nextSlot++;
+                        }
                         shop.item[nextSlot].SetDefaults(ItemID.CobaltShield);    //this is an example of how to add a terraria item
                         nextSlot++;
                         Mod CalamityMod = ModLoader.GetMod("CalamityMod");

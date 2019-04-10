@@ -32,7 +32,7 @@ namespace CelestialGifts.Items.Weapons
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.LunarBar, 20);
             recipe.AddIngredient(ItemID.FragmentSolar, 15);
-            recipe.AddIngredient(mod.ItemType<One_Above_All>());
+            recipe.AddIngredient(mod.ItemType<Galactica>());
             recipe.AddIngredient(mod.ItemType<SwordoftheDivine>());
             recipe.AddIngredient(ItemID.GoldCrown);
             recipe.AddIngredient(ItemID.TrueExcalibur);

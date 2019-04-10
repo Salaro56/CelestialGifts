@@ -38,7 +38,7 @@ namespace CelestialGifts.Projectiles.WeapProj
         {                                                           // sound that the projectile make when hiting the terrain
             {
                 projectile.Kill();
-
+                Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
                 Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
             }
             return false;

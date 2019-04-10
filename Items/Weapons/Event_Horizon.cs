@@ -25,8 +25,9 @@ namespace CelestialGifts.Items.Weapons
             item.width = 100;
             item.height = 41;
             item.maxStack = 1;
-            item.useTime = 10;
-            item.useAnimation = 13;
+            item.useTime = 4;
+            item.useAnimation = 12;
+            item.reuseDelay = 14;
             item.knockBack = 1f;
             item.noMelee = true;
             item.useStyle = 5;
@@ -40,7 +41,10 @@ namespace CelestialGifts.Items.Weapons
             item.crit = 60;
         }
 
-
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-30, 0);
+        }
 
         public override void AddRecipes() //Adding recipes
         {
@@ -64,16 +68,20 @@ namespace CelestialGifts.Items.Weapons
                 float vY = speedY + (float)Main.rand.Next(-spread, spread + 1) * spreadMult;
                 Projectile.NewProjectile(position.X, position.Y, vX, vY, type, damage, knockBack, Main.myPlayer);
             }
+            Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
+            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+            {
+                position += muzzleOffset;
+            }
             return false; //Makes sure to not spawn the original projectile
         }
 
-        public override Vector2? HoldoutOffset()
+        public override bool ConsumeAmmo(Player player)
         {
-            return Vector2.Zero;
+            // Because of how the game works, player.itemAnimation will be 11, 7, and finally 3. (UseAmination - 1, then - useTime until less than 0.) 
+            // We can get the Clockwork Assault Riffle Effect by not consuming ammo when itemAnimation is lower than the first shot.
+            return !(player.itemAnimation < item.useAnimation - 2);
         }
 
-    }
-
-
-
+    }  
 }

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using CelestialGifts.Projectiles.WeapProj;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CelestialGifts.Items.Weapons
 {
@@ -35,6 +36,7 @@ namespace CelestialGifts.Items.Weapons
             item.autoReuse = true;
             item.shootSpeed = 16f;
             item.shoot = mod.ProjectileType<LunarBurstShot>();
+            item.scale = 0.85f;
         }
         public override void AddRecipes()
         {
@@ -42,10 +44,40 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddRecipeGroup("IronBar", 24);
             recipe.AddIngredient(ItemID.Sapphire, 5);
             recipe.AddIngredient(ItemID.FallenStar, 5);
+            recipe.AddIngredient(ItemID.Feather, 10);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();
             
+        }
+
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return Color.White; // So the item's sprite isn't affected by light
+        }
+
+        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+        {
+            Texture2D texture = Main.itemTexture[item.type];
+            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+            // We redraw the item's sprite 4 times, each time shifted 2 pixels on each direction, using Main.DiscoColor to give it the color changing effect
+            for (int i = 0; i < 1; i++)
+            {
+                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                spriteBatch.Draw(texture, position + offsetPositon, null, Color.DarkBlue, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+            }
+            // Return true so the original sprite is drawn right after
+            return true;
+        }
+        public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+        {
+            Texture2D texture = Main.itemTexture[item.type];
+            for (int i = 0; i < 1; i++)
+            {
+                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                spriteBatch.Draw(texture, position + offsetPositon, null, Color.DarkBlue, 0, origin, scale, SpriteEffects.None, 0f);
+            }
+            return true;
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

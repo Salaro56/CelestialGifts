@@ -12,12 +12,12 @@ namespace CelestialGifts.Items.Weapons
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Divine's Domain");
+            DisplayName.SetDefault("Divine Domain");
             Tooltip.SetDefault("The power of the divine at your finger tips");
         }
         public override void SetDefaults()
         {
-            item.damage = 120;
+            item.damage = 90;
             item.melee = true;
             item.width = 80;
             item.height = 80;
@@ -51,7 +51,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.AngelWings);
             recipe.AddIngredient(mod.ItemType<NobleRadience>());
             recipe.AddIngredient(ItemID.GoldCrown);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();
 
@@ -61,7 +61,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.AngelWings);
             recipe.AddIngredient(mod.ItemType<NobleRadience>());
             recipe.AddIngredient(ItemID.PlatinumCrown);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

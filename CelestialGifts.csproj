@@ -40,12 +40,16 @@
     <Compile Include="Dusts\EtherealFlame.cs" />
     <Compile Include="Dusts\NightDust.cs" />
     <Compile Include="GlobalNPC.cs" />
+    <Compile Include="Items\Ammo\ChloroClip.cs" />
     <Compile Include="Items\Armour\PoliceKep.cs" />
     <Compile Include="Items\Weapons\Battle-Fly.cs" />
     <Compile Include="Items\BossSummons\TierOneRift.cs" />
     <Compile Include="Items\BossSummons\Emptiness.cs" />
     <Compile Include="Items\Weapons\Darkhart.cs" />
     <Compile Include="Items\Drops\Developers_Heart.cs" />
+    <Compile Include="Items\Weapons\NaturesWrath.cs" />
+    <Compile Include="Items\Weapons\Zombow.cs" />
+    <Compile Include="Projectiles\WeapProj\GalacticaStarBoi.cs" />
     <Compile Include="Items\Weapons\LunicRune.cs" />
     <Compile Include="Items\Weapons\Divine_Domain.cs" />
     <Compile Include="Items\Drops\NightmareEssence.cs" />
@@ -58,10 +62,10 @@
     <Compile Include="Items\Pets\LokiEgg.cs" />
     <Compile Include="Items\Weapons\LunarBlast.cs" />
     <Compile Include="Items\Weapons\LunarLament.cs" />
-    <Compile Include="Items\Weapons\One_Above_All.cs" />
+    <Compile Include="Items\Weapons\Galactica.cs" />
     <Compile Include="Items\Weapons\BrilliantCore.cs" />
     <Compile Include="Items\Ammo\SiriusShot.cs" />
-    <Compile Include="Items\Weapons\Solid Star.cs" />
+    <Compile Include="Items\Weapons\CelestialBow.cs" />
     <Compile Include="Items\Weapons\StarFire.cs" />
     <Compile Include="Items\Weapons\SwordofGaia.cs" />
     <Compile Include="Items\Weapons\SwordoftheDivine.cs" />
@@ -71,6 +75,7 @@
     <Compile Include="Items\Weapons\Red_Double_Phaseblade.cs" />
     <Compile Include="Items\Weapons\StaffOfFire.cs" />
     <Compile Include="Items\Weapons\White_Double_Phaseblade.cs" />
+    <Compile Include="Items\Weapons\WiltingRose.cs" />
     <Compile Include="Items\Weapons\Yellow_Double_Phaseblade.cs" />
     <Compile Include="Items\Weapons\yoyoCopJustice.cs" />
     <Compile Include="MyPlayer.cs" />
@@ -102,7 +107,7 @@
     <Compile Include="Projectiles\HostileProj\PainsReach.cs" />
     <Compile Include="Projectiles\Pets\Loki.cs" />
     <Compile Include="Projectiles\Pets\SolidRock.cs" />
-    <Compile Include="Projectiles\WeapProj\siriusShot.cs" />
+    <Compile Include="Projectiles\WeapProj\PiercingLight.cs" />
     <Compile Include="Projectiles\WeapProj\starshot.cs" />
     <Compile Include="Projectiles\WeapProj\Blue_Force.cs" />
     <Compile Include="Projectiles\WeapProj\Green_Force.cs" />
@@ -112,6 +117,7 @@
     <Compile Include="Projectiles\WeapProj\FlyAxe.cs" />
     <Compile Include="Projectiles\WeapProj\WhiteExplosion.cs" />
     <Compile Include="Projectiles\WeapProj\White_Force.cs" />
+    <Compile Include="Projectiles\WeapProj\WiltingFire.cs" />
     <Compile Include="Projectiles\WeapProj\Yellow_Force.cs" />
     <Compile Include="Projectiles\WeapProj\yoyoCopProjectile.cs" />
     <Compile Include="VanillaNPCShop.cs" />
@@ -145,6 +151,9 @@
     <Folder Include="NPCs\Town_NPCs\" />
     <Folder Include="Sounds\" />
     <Folder Include="Tiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

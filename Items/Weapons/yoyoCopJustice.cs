@@ -21,13 +21,13 @@ namespace CelestialGifts.Items.Weapons
         public override void SetDefaults()
         {
             item.useStyle = 5;
-            item.width = 86;
-            item.height = 124;
+            item.width = 50;
+            item.height = 50;
             item.useAnimation = 100;
             item.useTime = 100;
             item.shootSpeed = 20f;
             item.knockBack = 2.5f;
-            item.damage = 25;
+            item.damage = 12;
             item.rare = 6;
 
             item.melee = true;
@@ -36,7 +36,7 @@ namespace CelestialGifts.Items.Weapons
             item.noUseGraphic = true;
 
             item.UseSound = SoundID.Item1;
-            item.value = Item.sellPrice(platinum: 20);
+            item.value = Item.sellPrice(copper: 50);
             item.shoot = mod.ProjectileType<yoyoCopProjectile>();
         }
 

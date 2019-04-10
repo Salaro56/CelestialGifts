@@ -8,6 +8,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using CelestialGifts;
 using CelestialGifts.Projectiles.WeapProj;
+using Microsoft.Xna.Framework;
 
 namespace CelestialGifts.Items.Weapons
 {
@@ -22,22 +23,22 @@ namespace CelestialGifts.Items.Weapons
         public override void SetDefaults()
         {
 
-            item.damage = 50;
+            item.damage = 25;
             item.thrown = true;
             item.noMelee = true;
             item.width = 50;
             item.height = 50;
-            item.useTime = 40;
-            item.useAnimation = 30;
+            item.useTime = 10;
+            item.useAnimation = 10;
             item.useStyle = 1;
             item.knockBack = 6f;
-            item.value = 1000000;
-            item.rare = 4;
+            item.value = Item.buyPrice(0,0,0,50);
+            item.rare = 0;
             item.reuseDelay = 40;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType<Battlefly_proj>();
-            item.shootSpeed = 10f;
+            item.shootSpeed = 20f;
             item.useTurn = true;
             item.consumable = false;
             item.maxStack = 1;
@@ -54,6 +55,5 @@ namespace CelestialGifts.Items.Weapons
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
-
     }
 }

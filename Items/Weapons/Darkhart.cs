@@ -28,11 +28,11 @@ namespace CelestialGifts.Items.Weapons
             item.useAnimation = 5;
             item.useStyle = 1;
             item.knockBack = 1;
-            item.value = 1000000;
+            item.value = Item.buyPrice(0,50,0,0);
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.scale = 2;  
+            item.scale = 1;  
         }
 
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)

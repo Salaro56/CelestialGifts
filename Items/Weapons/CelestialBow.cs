@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CelestialGifts.Items.Weapons
 {
-    public class Solid_Star : ModItem
+    public class CelestialBow : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -33,11 +33,15 @@ namespace CelestialGifts.Items.Weapons
             item.useStyle = 5;
             item.value = 100000000;
             item.rare = 10;
-            item.shootSpeed = 50f;
+            item.shootSpeed = 40f;
             item.autoReuse = true;
             item.UseSound = SoundID.Item5;
             item.useAmmo = AmmoID.Arrow;
-            item.shoot = mod.ProjectileType<siriusShot>();
+            item.shoot = mod.ProjectileType<PiercingLight>();
+        }
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-5, 0);
         }
     }
 }

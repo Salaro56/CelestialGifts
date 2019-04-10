@@ -21,6 +21,22 @@ namespace CelestialGifts
                     Item.NewItem(npc.getRect(), mod.ItemType<Eclipse_Core>());
                 }
             }
+
+            if(npc.type == NPCID.Golem)
+            {
+                if (Main.rand.NextFloat() < .05)
+                {
+                    Item.NewItem(npc.getRect(), mod.ItemType<StaffOfFire>());
+                }
+            }
+
+            if (npc.type == NPCID.Zombie)
+            {
+                if (Main.rand.NextFloat() < .02)
+                {
+                    Item.NewItem(npc.getRect(), mod.ItemType<Zombow>());
+                }
+            }
         }
     }
 }

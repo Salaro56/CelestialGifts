@@ -14,10 +14,10 @@ namespace CelestialGifts.Projectiles.WeapProj
             ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = 20f;
             // YoyosMaximumRange is the maximum distance the yoyo sleep away from the player. 
             // Vanilla values range from 130f(Wood) to 400f(Terrarian), and defaults to 200f
-            ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 800f;
+            ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 350f;
             // YoyosTopSpeed is top speed of the yoyo projectile. 
             // Vanilla values range from 9f(Wood) to 17.5f(Terrarian), and defaults to 10f
-            ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 20f;
+            ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 15f;
         }
 
         public override void SetDefaults()
@@ -30,8 +30,7 @@ namespace CelestialGifts.Projectiles.WeapProj
             projectile.friendly = true;
             projectile.penetrate = -1;
             projectile.melee = true;
-            projectile.scale = 1f;
-            
+            projectile.scale = 0.5f;            
         }
         // notes for aiStyle 99: 
         // localAI[0] is used for timing up to YoyosLifeTimeMultiplier
@@ -50,27 +49,5 @@ namespace CelestialGifts.Projectiles.WeapProj
                 dust.scale = 1.6f;
             }
         }
-
-
-        public override void OnHitNPC(NPC n, int damage, float knockback, bool crit)
-        {
-            Player owner = Main.player[projectile.owner];
-            int rand = Main.rand.Next(2); //Generates an integer from 0 to 1
-            if (rand == 0)
-            {
-                n.AddBuff(24, 180); //On Fire! debuff for 3 seconds
-            }
-            else if (rand == 1)
-            {
-                owner.statLife += 5; //Gives 5 Health
-                owner.HealEffect(5, true); //Shows you have healed by 5 health
-            }
-            Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, 595, (int) (projectile.damage * 1.5), projectile.knockBack, Main.myPlayer); // 296 is the explosion from the Inferno Fork
-        }
-
-
-
-
-
     }
 }

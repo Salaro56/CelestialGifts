@@ -21,7 +21,7 @@ namespace CelestialGifts.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 300;  //The damage stat for the Weapon.
+            item.damage = 120;  //The damage stat for the Weapon.
             item.mana = 20;      //this defines how many mana this weapon use
             item.width = 100;
             item.height = 100;
@@ -30,7 +30,7 @@ namespace CelestialGifts.Items.Weapons
             item.useStyle = 5;  //The way your Weapon will be used, 1 is the regular sword swing for example
             item.noMelee = true; //so the item's animation doesn't do damage
             item.knockBack = 2.5f;  //The knockback stat of your Weapon.
-            item.value = Item.buyPrice(20, 0, 0, 0); //	How much the item is worth, in copper coins, when you sell it to a merchant. It costs 1/5th of this to buy it back from them. An easy way to remember the value is platinum, gold, silver, copper or PPGGSSCC (so this item price is 10gold)
+            item.value = Item.buyPrice(1, 0, 0, 0); //	How much the item is worth, in copper coins, when you sell it to a merchant. It costs 1/5th of this to buy it back from them. An easy way to remember the value is platinum, gold, silver, copper or PPGGSSCC (so this item price is 10gold)
             item.rare = 8;   //The color the title of your Weapon when hovering over it ingame  
             item.UseSound = SoundID.Item44;   //The sound played when using your Weapon
             item.autoReuse = false;   //Weather your Weapon will be used again after use while holding down, if false you will need to click again after use to use it again.
