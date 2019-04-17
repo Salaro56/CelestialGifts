@@ -26,6 +26,7 @@ namespace CelestialGifts.Items.Weapons
             item.shootSpeed = 15f;
             item.width = 70;
             item.height = 70;
+            item.UseSound = SoundID.Item5;
         }
     }
 }

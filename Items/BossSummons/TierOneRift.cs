@@ -16,8 +16,8 @@ namespace CelestialGifts.Items.BossSummons
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tier One Unstable Rift");
-            Tooltip.SetDefault("If you unseal this be ready for a fight" +
+            DisplayName.SetDefault("Strange Mirror");
+            Tooltip.SetDefault("It feels like you're looking into nothing" +
                 "\nSummons Fear");
         }
 

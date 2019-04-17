@@ -23,7 +23,7 @@ namespace CelestialGifts.Items.Weapons
             item.width = 100;
 			item.height = 100;
             item.scale = 1;
-			item.useTime = 120;
+			item.useTime = 80;
 			item.useAnimation = 30;
 			item.useStyle = 1;
 			item.knockBack = 6;

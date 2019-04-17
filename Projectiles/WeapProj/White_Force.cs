@@ -15,8 +15,8 @@ namespace CelestialGifts.Projectiles.WeapProj  //We need this to basically indic
         }
         public override void SetDefaults()
         {
-            projectile.width = 100;     //Set the hitbox width
-            projectile.height = 100;       //Set the hitbox height
+            projectile.width = 120;     //Set the hitbox width
+            projectile.height = 120;       //Set the hitbox height
             projectile.friendly = true;    //Tells the game whether it is friendly to players/friendly npcs or not
             projectile.penetrate = -1;    //Tells the game how many enemies it can hit before being destroyed. -1 = never
             projectile.tileCollide = false; //Tells the game whether or not it can collide with a tile

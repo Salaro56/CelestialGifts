@@ -24,7 +24,7 @@ namespace CelestialGifts.Projectiles.WeapProj
             projectile.hostile = false;
             projectile.friendly = true;
             projectile.melee = true;
-            projectile.penetrate = -1;
+            projectile.penetrate = 1;
             projectile.damage = 50;
             projectile.scale = 1;
             projectile.tileCollide = false;

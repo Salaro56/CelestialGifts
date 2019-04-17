@@ -38,6 +38,7 @@
     <Compile Include="Dusts\DivineSpark.cs" />
     <Compile Include="Dusts\DreamDust.cs" />
     <Compile Include="Dusts\EtherealFlame.cs" />
+    <Compile Include="Dusts\HolyLight.cs" />
     <Compile Include="Dusts\NightDust.cs" />
     <Compile Include="GlobalNPC.cs" />
     <Compile Include="Items\Ammo\ChloroClip.cs" />
@@ -48,7 +49,11 @@
     <Compile Include="Items\Weapons\Darkhart.cs" />
     <Compile Include="Items\Drops\Developers_Heart.cs" />
     <Compile Include="Items\Weapons\NaturesWrath.cs" />
+    <Compile Include="Items\Weapons\SilverMirror.cs" />
     <Compile Include="Items\Weapons\Zombow.cs" />
+    <Compile Include="NPCs\Mobs\Angel.cs" />
+    <Compile Include="NPCs\Town_NPCs\AngelFairy.cs" />
+    <Compile Include="Projectiles\HostileProj\CrownOfThorns.cs" />
     <Compile Include="Projectiles\WeapProj\GalacticaStarBoi.cs" />
     <Compile Include="Items\Weapons\LunicRune.cs" />
     <Compile Include="Items\Weapons\Divine_Domain.cs" />
@@ -108,6 +113,7 @@
     <Compile Include="Projectiles\Pets\Loki.cs" />
     <Compile Include="Projectiles\Pets\SolidRock.cs" />
     <Compile Include="Projectiles\WeapProj\PiercingLight.cs" />
+    <Compile Include="Projectiles\WeapProj\SilverArrow.cs" />
     <Compile Include="Projectiles\WeapProj\starshot.cs" />
     <Compile Include="Projectiles\WeapProj\Blue_Force.cs" />
     <Compile Include="Projectiles\WeapProj\Green_Force.cs" />
@@ -148,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Items\Placables\" />
-    <Folder Include="NPCs\Town_NPCs\" />
     <Folder Include="Sounds\" />
     <Folder Include="Tiles\" />
   </ItemGroup>

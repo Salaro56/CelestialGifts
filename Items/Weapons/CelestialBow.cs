@@ -33,15 +33,11 @@ namespace CelestialGifts.Items.Weapons
             item.useStyle = 5;
             item.value = 100000000;
             item.rare = 10;
-            item.shootSpeed = 40f;
+            item.shootSpeed = 25f;
             item.autoReuse = true;
             item.UseSound = SoundID.Item5;
             item.useAmmo = AmmoID.Arrow;
             item.shoot = mod.ProjectileType<PiercingLight>();
-        }
-        public override Vector2? HoldoutOffset()
-        {
-            return new Vector2(-5, 0);
         }
     }
 }

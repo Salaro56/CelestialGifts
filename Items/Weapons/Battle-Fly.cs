@@ -22,24 +22,21 @@ namespace CelestialGifts.Items.Weapons
 
         public override void SetDefaults()
         {
-
+            item.useStyle = 1;
+            item.useAnimation = 15;
+            item.useTime = 15;
             item.damage = 25;
             item.thrown = true;
             item.noMelee = true;
             item.width = 50;
             item.height = 50;
-            item.useTime = 10;
-            item.useAnimation = 10;
-            item.useStyle = 1;
             item.knockBack = 6f;
             item.value = Item.buyPrice(0,0,0,50);
             item.rare = 0;
-            item.reuseDelay = 40;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType<Battlefly_proj>();
-            item.shootSpeed = 20f;
-            item.useTurn = true;
+            item.shootSpeed = 15f;
             item.consumable = false;
             item.maxStack = 1;
             item.noUseGraphic = true;

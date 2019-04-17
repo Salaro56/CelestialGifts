@@ -14,6 +14,7 @@ using CelestialGifts.NPCs.Mobs;
 using CelestialGifts.Projectiles.HostileProj;
 using CelestialGifts.Dusts;
 using CelestialGifts.NPCs.Bosses.NightmareWorm;
+using CelestialGifts.Items.Weapons;
 
 namespace CelestialGifts.NPCs.Bosses
 {
@@ -68,7 +69,6 @@ namespace CelestialGifts.NPCs.Bosses
 
         public override void AI()
         {
-
             BossFight();
             Target();
             SpawnNPC();
@@ -78,7 +78,6 @@ namespace CelestialGifts.NPCs.Bosses
                 Main.dust[dust].noGravity = false; //this make so the dust is effected by gravity
                 Main.dust[dust].velocity *= 2f;
             }
-
         }
 
         private void BossFight()
@@ -197,8 +196,9 @@ namespace CelestialGifts.NPCs.Bosses
             if (Main.expertMode)
             {
                 npc.DropBossBags();
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<SilverMirror>());
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<TierOneRift>());
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<NightmareEssence>(), 5);
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<NightmareEssence>(), 20);
             }
             else
             {
@@ -206,7 +206,7 @@ namespace CelestialGifts.NPCs.Bosses
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Blackheart"));
                 }
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Essence of Nightmares"), 5); // For Items that you want to always drop
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Essence of Nightmares"), 15); // For Items that you want to always drop
             }
         }
 

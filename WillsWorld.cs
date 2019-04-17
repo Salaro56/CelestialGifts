@@ -11,15 +11,17 @@ using System.IO;
 
 namespace WillsWorld
 {
-    public class TutorialWorld : ModWorld
+    public class WillsWorld : ModWorld
     {
         public static int biomeTiles = 0;
         // Stuff added with the Boss
         public static bool downedPain = false; // Downed Tutorial Boss
+        public static int questsLeft;
 
         public override void Initialize()
         {
             downedPain = false;
+            questsLeft = 10;
         }
 
         public override TagCompound Save()
@@ -29,7 +31,8 @@ namespace WillsWorld
 
             return new TagCompound
             {
-                {"downed", downed }
+                {"downed", downed },
+                {"questsLeft", questsLeft }
             };
         }
 
@@ -37,6 +40,8 @@ namespace WillsWorld
         {
             var downed = tag.GetList<string>("downed");
             downedPain = downed.Contains("tutorial");
+            if (tag.ContainsKey("questsLeft"))
+                questsLeft = tag.GetInt("questsLeft");
         }
 
         public override void LoadLegacy(BinaryReader reader)

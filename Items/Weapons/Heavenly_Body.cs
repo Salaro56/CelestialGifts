@@ -24,8 +24,9 @@ namespace CelestialGifts.Items.Weapons
             item.value = Item.buyPrice(10, 0, 0, 0);
             item.rare = 12;
             item.UseSound = SoundID.Item1;
-            item.autoReuse = false;
+            item.autoReuse = true;
             item.scale = 0.5f;
+            item.useTurn = true;
         }
         public override void AddRecipes()
         {

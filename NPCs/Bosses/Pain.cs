@@ -165,7 +165,7 @@ namespace CelestialGifts.NPCs.Bosses
             }
 
             // For settings if the boss has been downed
-            TutorialWorld.downedPain = true;
+            WillsWorld.WillsWorld.downedPain = true;
         }
 
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)

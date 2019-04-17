@@ -16,17 +16,18 @@ namespace CelestialGifts.Items.Weapons      //We need this to basically indicate
         {
             item.damage = 55;    //The damage stat for the Weapon.
             item.melee = true;     //This defines if it does Melee damage and if its effected by Melee increasing Armor/Accessories.
-            item.width = 100;    //The size of the width of the hitbox in pixels.
-            item.height = 100;    //The size of the height of the hitbox in pixels.
+            item.width = 120;    //The size of the width of the hitbox in pixels.
+            item.height = 120;    //The size of the height of the hitbox in pixels.
             item.useTime = 10;   //How fast the Weapon is used.
             item.useAnimation = 10;     //How long the Weapon is used for.
             item.channel = true;
-            item.useStyle = 100;    //The way your Weapon will be used, 1 is the regular sword swing for example
+            item.useStyle = 1;    //The way your Weapon will be used, 1 is the regular sword swing for example
             item.knockBack = 8f;    //The knockback stat of your Weapon.
             item.value = Item.buyPrice(0, 0, 5, 0); // How much the item is worth, in copper coins, when you sell it to a merchant. It costs 1/5th of this to buy it back from them. An easy way to remember the value is platinum, gold, silver, copper or PPGGSSCC (so this item price is 10gold)
-            item.rare = 11;   //The color the title of your Weapon when hovering over it ingame                    
+            item.rare = 1;   //The color the title of your Weapon when hovering over it ingame                    
             item.shoot = mod.ProjectileType<Green_Force>();  //This defines what type of projectile this weapon will shoot  
             item.noUseGraphic = true; // this defines if it does not use graphic
+            item.noMelee = true;
         }
 
         public override bool UseItemFrame(Player player)     //this defines what frame the player use when this weapon is used

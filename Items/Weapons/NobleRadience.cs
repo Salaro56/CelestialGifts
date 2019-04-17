@@ -33,6 +33,7 @@ namespace CelestialGifts.Items.Weapons
             item.autoReuse = false;
             item.shoot = mod.ProjectileType<Kings_Wave>();
             item.shootSpeed = 10f;
+            item.autoReuse = true;
         }
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {

@@ -20,8 +20,8 @@ namespace CelestialGifts.Items.Weapons
             item.shoot = ProjectileID.TerraBeam;
             item.shootSpeed = 20f;
             item.melee = true;
-            item.width = 100;
-            item.height = 130;
+            item.width = 62;
+            item.height = 62;
             item.scale = 1;
             item.useTime = 40;
             item.useAnimation = 30;

@@ -10,7 +10,6 @@ namespace CelestialGifts.Projectiles.WeapProj
 
     public class PiercingLight : ModProjectile
     {
-        public override string Texture { get { return "Terraria/Projectile_" + ProjectileID.ShadowBeamFriendly; } }
         public override void SetDefaults()
         {
             projectile.Name = "Piercing Light";
@@ -24,19 +23,14 @@ namespace CelestialGifts.Projectiles.WeapProj
             projectile.ignoreWater = true;
             projectile.ranged = true;
             projectile.aiStyle = 0;
-            projectile.scale = 0.5f;
+            projectile.scale = 1;
         }
 
         public override void AI()
         {
             Player owner = Main.player[projectile.owner]; //Makes a player variable of owner set as the player using the projectile
+            projectile.rotation = projectile.velocity.ToRotation() + MathHelper.PiOver2;
             projectile.light = 0.9f; //Lights up the whole room
-            for(int d = 1; d < 50; d++)
-            {
-                int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width + 4, projectile.height + 4, mod.DustType<EtherealFlame>(), projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f); //Spawns dust
-                Main.dust[DustID].noGravity = true; //Makes dust not fall
-                Main.dust[DustID].color = Color.WhiteSmoke;
-            }
             projectile.ai[0] += 1f; // Use a timer to wait 15 ticks before applying gravity.
             if (projectile.ai[0] >= 120f)
             {
@@ -46,6 +40,15 @@ namespace CelestialGifts.Projectiles.WeapProj
             if (projectile.velocity.Y > 16f)
             {
                 projectile.velocity.Y = 16f;
+            }
+            //dust
+            for (int i = 0; i < 10; i++)
+            {
+                int num309 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), 8, 8, mod.DustType<HolyLight>(), projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, Color.Silver, 1.25f);
+                Main.dust[num309].velocity *= -0.25f;
+                num309 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), 8, 8, 107, projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, Color.Silver, 1.25f);
+                Main.dust[num309].velocity *= -0.15f;
+                Main.dust[num309].position -= projectile.velocity * 0.4f;
             }
         }
 

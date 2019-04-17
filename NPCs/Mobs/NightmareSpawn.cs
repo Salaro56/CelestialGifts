@@ -34,8 +34,8 @@ namespace CelestialGifts.NPCs.Mobs
             npc.DeathSound = SoundID.NPCDeath6;
             npc.value = 100f;
             npc.knockBackResist = 1f;
-            aiType = NPCID.Harpy;
-            animationType = NPCID.Harpy;
+            aiType = NPCID.Demon;
+            animationType = NPCID.Demon;
             npc.noGravity = true;
         }
 
@@ -48,7 +48,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             player = Main.player[npc.target];
 
-            Move(new Vector2(0, -100f)); // Calls the Move Method
+            Move(new Vector2(50, -100f)); // Calls the Move Method
             //Attacking
             npc.ai[1] -= 1f; // Subtracts 1 from the ai.
             if (npc.ai[1] <= 0f)
@@ -59,7 +59,7 @@ namespace CelestialGifts.NPCs.Mobs
         private void Move(Vector2 offset)
         {
             speed = 10f; // Sets the max speed of the npc.
-            Vector2 moveTo = player.Center + offset * 2; // Gets the point that the npc will be moving to.
+            Vector2 moveTo = player.Center + offset * 2 + new Vector2(100, -20); // Gets the point that the npc will be moving to.
             Vector2 move = moveTo - npc.Center;
             float magnitude = Magnitude(move);
             if (magnitude > speed)
@@ -82,7 +82,7 @@ namespace CelestialGifts.NPCs.Mobs
             float magnitude = Magnitude(velocity);
             if (magnitude > 0)
             {
-                velocity *= 5f / magnitude;
+                velocity *= 4f / magnitude;
             }
             else
             {
@@ -129,7 +129,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             if (Main.rand.Next(1000) == 0)
                 Item.NewItem(npc.getRect(), mod.ItemType<Emptiness>());
-            if (Main.rand.Next(20) == 0)
+            if (Main.rand.Next(10) == 0)
                 Item.NewItem(npc.getRect(), mod.ItemType<NightmareEssence>());
         }
     }

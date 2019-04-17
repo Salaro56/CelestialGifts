@@ -54,7 +54,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             if (Main.rand.Next(1000) == 0)
                 Item.NewItem(npc.getRect(), mod.ItemType<Emptiness>());
-            if (Main.rand.Next(20) == 0)
+            if (Main.rand.Next(10) == 0)
                 Item.NewItem(npc.getRect(), mod.ItemType<NightmareEssence>());
         }
     }
