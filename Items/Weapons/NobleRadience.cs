@@ -24,7 +24,6 @@ namespace CelestialGifts.Items.Weapons
             item.scale = 1.2f;
             item.useTime = 60;
             item.useAnimation = 20;
-            projOnSwing = true;
             item.useStyle = 1;
             item.knockBack = 3;
             item.value = 21500;
