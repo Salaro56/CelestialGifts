@@ -1,14 +1,5 @@
-A mystical seal was broken and with it released pandoras box. The world now ravaged by demons and creatures unfathomable, it is your task to take them down and seal them away once and for all.
+**Development on this mod will end here, beyond a few bug fixes and minor changes I won't be able to focus on this mod anymore inbetween school and work as I was doing this entirely free of charge. Thank you for joining me on this journey**
 
-**Note this mod is still a work in progress and new content is coming out for it on a regular basis. If you install this mod please expect there to be bugs and don't judge it too harshly. Our team is working hard to not only make new content but make the mod as good as it can be for the user.  https://discord.gg/DhHVfmB Here is a link to my discord server, if you wish to give suggestions for my  mod or talk with other players about the state of the mod or even let us know about bugs then we'll be sure to do our best to welcome you. As of now we don't have a completed wiki but with the help of the playerbase we can get it finished as soon as possible
-
-This mod is a huge content mod with a planned;
-
-300+ items,
-New buffs,
-30+ bosses,
-New events and mobs to keep the game fresh and challenging,
-Music,
-Art.
-
-We hope you enjoy your time playing even though there isn't much to Celestial Gifts yet.
+This mod adds new mobs, items, and bosses. 
+Most of the items are jokes but there is three sets for the melee, magic, and range class that evolves with you as you progress throughout the game.
+You need to constantly update it and work on it so you can be as strong as possible.
