@@ -15,22 +15,22 @@ namespace CelestialGifts.NPCs.Mobs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Nightmare Bones");
-            Main.npcFrameCount[npc.type] = 3;
+            //Main.npcFrameCount[npc.type] = 3;
         }
 
         public override void SetDefaults()
         {
-            npc.width = 64;
-            npc.height = 64;
+            npc.width = 142;
+            npc.height = 173;
             npc.damage = 40;
-            npc.defense = 10;
-            npc.lifeMax = 100;
+            npc.defense = 20;
+            npc.lifeMax = 300;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath6;
             npc.value = 60f;
             npc.knockBackResist = 1f;
             npc.aiStyle = 25;
-            aiType = NPCID.Zombie;
+            aiType = NPCID.Mimic;
             animationType = NPCID.Zombie;
             npc.noGravity = false;
             npc.stepSpeed = 10f;
