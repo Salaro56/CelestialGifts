@@ -40,7 +40,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             if(spawnInfo.player.ZoneSkyHeight)
             {
-                return SpawnCondition.Sky.Chance * 0.7f;
+                return SpawnCondition.Sky.Chance * 0.25f;
             }
             return 0f;
         }
