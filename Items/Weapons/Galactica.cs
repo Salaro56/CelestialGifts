@@ -29,7 +29,7 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.shoot = mod.ProjectileType<GalacticaStarBoi>();
+            item.shoot = ModContent.ProjectileType<GalacticaStarBoi>();
             item.shootSpeed = 15f;
             item.crit = 5;
         }
@@ -61,7 +61,7 @@ namespace CelestialGifts.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.FragmentSolar, 25);
-            recipe.AddIngredient(mod.ItemType<Divine_Domain>());
+            recipe.AddIngredient(ModContent.ItemType<Divine_Domain>());
             recipe.AddIngredient(ItemID.GoldCrown);
             recipe.AddIngredient(ItemID.TrueExcalibur);
             recipe.AddTile(TileID.MythrilAnvil);

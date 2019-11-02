@@ -30,7 +30,7 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = false;
-            item.shoot = mod.ProjectileType<Kings_Wave>();
+            item.shoot = ModContent.ProjectileType<Kings_Wave>();
             item.shootSpeed = 10f;
             item.autoReuse = true;
         }
@@ -44,7 +44,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.SoulofMight, 20);
             recipe.AddIngredient(ItemID.SoulofFlight, 5);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
-            recipe.AddIngredient(mod.ItemType<BrilliantCore>());
+            recipe.AddIngredient(ModContent.ItemType<BrilliantCore>());
             recipe.AddIngredient(ItemID.GoldCrown);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
@@ -54,7 +54,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.SoulofMight, 20);
             recipe.AddIngredient(ItemID.SoulofFlight, 5);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
-            recipe.AddIngredient(mod.ItemType<BrilliantCore>());
+            recipe.AddIngredient(ModContent.ItemType<BrilliantCore>());
             recipe.AddIngredient(ItemID.PlatinumCrown);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);

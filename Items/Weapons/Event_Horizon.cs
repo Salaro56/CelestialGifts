@@ -36,8 +36,8 @@ namespace CelestialGifts.Items.Weapons
             item.shootSpeed = 30f;
             item.autoReuse = true;
             item.UseSound = SoundID.Item12;
-            item.useAmmo = mod.ItemType<Energy_Clip>();
-            item.shoot = mod.ProjectileType<Nebula>();
+            item.useAmmo = ModContent.ItemType<Energy_Clip>();
+            item.shoot = ModContent.ProjectileType<Nebula>();
             item.crit = 60;
         }
 
@@ -49,7 +49,7 @@ namespace CelestialGifts.Items.Weapons
         public override void AddRecipes() //Adding recipes
         {
             ModRecipe recipe = new ModRecipe(mod); //Creating a new recipe to be added to 
-            recipe.AddIngredient(mod.ItemType<Eclipse_Core>());
+            recipe.AddIngredient(ModContent.ItemType<Eclipse_Core>());
             recipe.AddIngredient(ItemID.FallenStar, 10);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 25);
             recipe.AddTile(TileID.MythrilAnvil);

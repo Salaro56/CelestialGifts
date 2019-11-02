@@ -31,7 +31,7 @@ namespace CelestialGifts.Projectiles.Pets
         public override void AI()
         {
             Player player = Main.player[projectile.owner];
-            MyPlayer modPlayer = player.GetModPlayer<MyPlayer>(mod);
+            MyPlayer modPlayer = player.GetModPlayer<MyPlayer>();
             if (player.dead)
             {
                 modPlayer.SolidRock = false;

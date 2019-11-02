@@ -35,7 +35,7 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 0;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.shoot = mod.ProjectileType<Battlefly_proj>();
+            item.shoot = ModContent.ProjectileType<Battlefly_proj>();
             item.shootSpeed = 15f;
             item.consumable = false;
             item.maxStack = 1;

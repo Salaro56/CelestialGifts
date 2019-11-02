@@ -25,7 +25,7 @@ namespace CelestialGifts.Items.Weapons      //We need this to basically indicate
             item.knockBack = 8f;    //The knockback stat of your Weapon.
             item.value = Item.buyPrice(0, 0, 5, 0); // How much the item is worth, in copper coins, when you sell it to a merchant. It costs 1/5th of this to buy it back from them. An easy way to remember the value is platinum, gold, silver, copper or PPGGSSCC (so this item price is 10gold)
             item.rare = 1;   //The color the title of your Weapon when hovering over it ingame                    
-            item.shoot = mod.ProjectileType<Green_Force>();  //This defines what type of projectile this weapon will shoot  
+            item.shoot = ModContent.ProjectileType<Green_Force>();  //This defines what type of projectile this weapon will shoot  
             item.noUseGraphic = true; // this defines if it does not use graphic
             item.noMelee = true;
         }

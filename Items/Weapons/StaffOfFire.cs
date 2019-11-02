@@ -34,7 +34,7 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 8;   //The color the title of your Weapon when hovering over it ingame  
             item.UseSound = SoundID.Item44;   //The sound played when using your Weapon
             item.autoReuse = false;   //Weather your Weapon will be used again after use while holding down, if false you will need to click again after use to use it again.
-            item.shoot = mod.ProjectileType<WhiteExplosion>();
+            item.shoot = ModContent.ProjectileType<WhiteExplosion>();
             item.magic = true;    //This defines if it does Summon damage and if its effected by Summon increasing Armor/Accessories.
             item.sentry = true; //tells the game that this is a sentry
             item.maxStack = 1;

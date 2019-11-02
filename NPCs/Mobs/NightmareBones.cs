@@ -59,7 +59,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             for (int i = 0; i < 20; i++) //this i a for loop tham make the dust spawn , the higher is the value the more dust will spawn
             {
-                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<DreamDust>(), npc.velocity.X * 1.2f, npc.velocity.Y * 1.2f, 120, default(Color), 2.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, ModContent.DustType<DreamDust>(), npc.velocity.X * 1.2f, npc.velocity.Y * 1.2f, 120, default(Color), 2.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
                 Main.dust[dust].noGravity = true; //this make so the dust has no gravity
                 Main.dust[dust].velocity *= 0.5f;
             }
@@ -68,9 +68,9 @@ namespace CelestialGifts.NPCs.Mobs
         public override void NPCLoot()
         {
             if (Main.rand.Next(1000) == 0)
-                Item.NewItem(npc.getRect(), mod.ItemType<Emptiness>());
+                Item.NewItem(npc.getRect(), ModContent.ItemType<Emptiness>());
             if (Main.rand.Next(10) == 0)
-                Item.NewItem(npc.getRect(), mod.ItemType<NightmareEssence>());            
+                Item.NewItem(npc.getRect(), ModContent.ItemType<NightmareEssence>());            
         }
     }
 }

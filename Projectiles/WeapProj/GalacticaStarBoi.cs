@@ -82,7 +82,7 @@ namespace CelestialGifts.Projectiles.WeapProj
                 float speedX = -projectile.velocity.X * Main.rand.NextFloat(.1f, .7f) + Main.rand.NextFloat(-10f, 4f);
                 float speedY = -projectile.velocity.Y * Main.rand.Next(5, 10) * 0.01f + Main.rand.Next(-10, 10) * 0.4f; // This is Vanilla code, a little more obscure.
                                                                                                                          // Spawn the Projectile.
-                Projectile.NewProjectile(projectile.position.X + speedX, projectile.position.Y + speedY, speedX, speedY, mod.ProjectileType<HolyFire>(), (int)(projectile.damage * 0.5), 0f, projectile.owner, 0f, 0f);
+                Projectile.NewProjectile(projectile.position.X + speedX, projectile.position.Y + speedY, speedX, speedY, ModContent.ProjectileType<HolyFire>(), (int)(projectile.damage * 0.5), 0f, projectile.owner, 0f, 0f);
             }
         }
     }

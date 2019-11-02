@@ -44,7 +44,7 @@ namespace CelestialGifts.Items.BossSummons
         public override bool UseItem(Player player)
         {
             // NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType<Fear>()); // Spawn the boss within a range of the player. 
-            NPC.NewNPC((int)player.position.X + 100, (int)player.position.Y, mod.NPCType<Fear>());
+            NPC.NewNPC((int)player.position.X + 100, (int)player.position.Y, ModContent.NPCType<Fear>());
             Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
 
             return true;
@@ -54,7 +54,7 @@ namespace CelestialGifts.Items.BossSummons
             ModRecipe recipe = new ModRecipe(mod); //Creating a new recipe to be added to 
             recipe.AddIngredient(ItemID.SoulofNight, 10);
             recipe.AddIngredient(ItemID.SoulofLight, 10);
-            recipe.AddIngredient(mod.GetItem<NightmareEssence>(), 10);
+            recipe.AddIngredient(ModContent.GetInstance<NightmareEssence>(), 10);
             recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this); //Set the result of the recipe to this item (this refers to the class itself)
             recipe.AddRecipe(); //Add this recipe

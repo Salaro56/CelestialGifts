@@ -117,7 +117,7 @@ namespace CelestialGifts.NPCs.Bosses
 
         private void Shoot()
         {
-            int type = mod.ProjectileType<PainsReach>();
+            int type = ModContent.ProjectileType<PainsReach>();
             Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
             float magnitude = Magnitude(velocity);
             if (magnitude > 0)
@@ -153,13 +153,13 @@ namespace CelestialGifts.NPCs.Bosses
             {
                 npc.DropBossBags();
                 if (Main.rand.Next(10) == 0)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<Developers_Heart>()); // For Items that you want to always drop
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Developers_Heart>()); // For Items that you want to always drop
             }
             else
             {
                 if (Main.rand.Next(10) == 0) // For items that you want to have a chance to drop 
                 {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<Developers_Heart>());
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Developers_Heart>());
                 }
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Ectoplasm, 15);
             }

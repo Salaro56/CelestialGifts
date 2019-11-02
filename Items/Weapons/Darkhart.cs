@@ -20,7 +20,7 @@ namespace CelestialGifts.Items.Weapons
 
         public override void SetDefaults()
         {
-            item.damage = 50;
+            item.damage = 35;
             item.melee = true;
             item.width = 40;
             item.height = 80;

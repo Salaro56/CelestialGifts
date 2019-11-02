@@ -74,7 +74,7 @@ namespace CelestialGifts.NPCs.Bosses
             SpawnNPC();
             for (int i = 0; i < 1; i++)
             {
-                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width + 200 & - 200, npc.height, mod.DustType<NightDust>(), npc.velocity.X * 3f, npc.velocity.Y * 3f, 120, Color.Black);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width + 200 & - 200, npc.height, ModContent.DustType<NightDust>(), npc.velocity.X * 3f, npc.velocity.Y * 3f, 120, Color.Black);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
                 Main.dust[dust].noGravity = false; //this make so the dust is effected by gravity
                 Main.dust[dust].velocity *= 2f;
             }
@@ -84,7 +84,7 @@ namespace CelestialGifts.NPCs.Bosses
         {
 
             //stage one
-            if (NPC.AnyNPCs(mod.NPCType("Nightmare")) || NPC.AnyNPCs(mod.NPCType<NightmareHead>()))
+            if (NPC.AnyNPCs(mod.NPCType("Nightmare")) || NPC.AnyNPCs(ModContent.NPCType<NightmareHead>()))
             {
 
                 npc.dontTakeDamage = true;
@@ -137,7 +137,7 @@ namespace CelestialGifts.NPCs.Bosses
 
         private void Shoot()
         {
-            int type = mod.ProjectileType<NightmareNeedle>();
+            int type = ModContent.ProjectileType<NightmareNeedle>();
             Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
             float magnitude = Magnitude(velocity);
             if (magnitude > 0)
@@ -171,21 +171,21 @@ namespace CelestialGifts.NPCs.Bosses
         {
             if (spawn == true)
             {
-                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
-                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
-                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
+                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<Nightmare>());
+                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<Nightmare>());
+                NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<NightmareHead>());
 
                 if (npc.life <= 9000)
                 {
-                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
-                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
-                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
-                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<NightmareHead>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<NightmareHead>());
                 }
                 else if (npc.life <= 6000)
                 {
-                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<Nightmare>());
-                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, mod.NPCType<NightmareHead>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<Nightmare>());
+                    NPC.NewNPC((int)npc.position.X + Main.rand.Next(500), (int)npc.position.Y, ModContent.NPCType<NightmareHead>());
                 }
             }           
             spawn = false;
@@ -196,9 +196,9 @@ namespace CelestialGifts.NPCs.Bosses
             if (Main.expertMode)
             {
                 npc.DropBossBags();
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<SilverMirror>());
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<TierOneRift>());
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<NightmareEssence>(), 20);
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SilverMirror>());
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TierOneRift>());
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<NightmareEssence>(), 20);
             }
             else
             {

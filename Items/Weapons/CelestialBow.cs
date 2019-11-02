@@ -37,7 +37,7 @@ namespace CelestialGifts.Items.Weapons
             item.autoReuse = true;
             item.UseSound = SoundID.Item5;
             item.useAmmo = AmmoID.Arrow;
-            item.shoot = mod.ProjectileType<PiercingLight>();
+            item.shoot = ModContent.ProjectileType<PiercingLight>();
         }
     }
 }

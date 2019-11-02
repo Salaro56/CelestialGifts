@@ -38,7 +38,7 @@ namespace CelestialGifts.Projectiles.HostileProj
         {
             for(int i = 0; i < 10; i++)
             {
-                int dust = Dust.NewDust(new Vector2(projectile.position.X - 20, projectile.position.Y), projectile.width, projectile.height, mod.DustType<HolyLight>(), projectile.velocity.X, projectile.velocity.Y, 0, default(Color), 1f);
+                int dust = Dust.NewDust(new Vector2(projectile.position.X - 20, projectile.position.Y), projectile.width, projectile.height, ModContent.DustType<HolyLight>(), projectile.velocity.X, projectile.velocity.Y, 0, default(Color), 1f);
                 Main.dust[dust].noGravity = true;
             }
             projectile.rotation += 0.4f * (float)projectile.direction; 

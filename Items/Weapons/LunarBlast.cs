@@ -35,7 +35,7 @@ namespace CelestialGifts.Items.Weapons
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
             item.shootSpeed = 16f;
-            item.shoot = mod.ProjectileType<LunarBurstShot>();
+            item.shoot = ModContent.ProjectileType<LunarBurstShot>();
             item.scale = 0.85f;
         }
         public override void AddRecipes()

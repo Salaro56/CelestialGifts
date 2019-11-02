@@ -44,7 +44,7 @@ namespace CelestialGifts.Projectiles.WeapProj
             //dust
             for (int i = 0; i < 10; i++)
             {
-                int num309 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), 8, 8, mod.DustType<HolyLight>(), projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, Color.Silver, 1.25f);
+                int num309 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), 8, 8, ModContent.DustType<HolyLight>(), projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, Color.Silver, 1.25f);
                 Main.dust[num309].velocity *= -0.25f;
                 num309 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), 8, 8, 107, projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, Color.Silver, 1.25f);
                 Main.dust[num309].velocity *= -0.15f;
@@ -56,7 +56,7 @@ namespace CelestialGifts.Projectiles.WeapProj
         {
             for(int d = 1; d < 100; d++)
             {
-                int dust = Dust.NewDust(new Vector2(projectile.position.X - 10, projectile.position.Y - 25), 50, 50, mod.DustType<EtherealFlame>(), projectile.velocity.X * 0.25f, projectile.velocity.Y * 0.25f, 190, default(Color), 2f);
+                int dust = Dust.NewDust(new Vector2(projectile.position.X - 10, projectile.position.Y - 25), 50, 50, ModContent.DustType<EtherealFlame>(), projectile.velocity.X * 0.25f, projectile.velocity.Y * 0.25f, 190, default(Color), 2f);
                 Main.dust[dust].noGravity = true;
             }
         }

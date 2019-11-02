@@ -30,7 +30,7 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 6;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.shoot = mod.ProjectileType<HolyFire>();
+            item.shoot = ModContent.ProjectileType<HolyFire>();
             item.shootSpeed = 7f;
         }
 
@@ -49,7 +49,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.HallowedBar, 20);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
             recipe.AddIngredient(ItemID.AngelWings);
-            recipe.AddIngredient(mod.ItemType<NobleRadience>());
+            recipe.AddIngredient(ModContent.ItemType<NobleRadience>());
             recipe.AddIngredient(ItemID.GoldCrown);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
@@ -59,7 +59,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.HallowedBar, 20);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
             recipe.AddIngredient(ItemID.AngelWings);
-            recipe.AddIngredient(mod.ItemType<NobleRadience>());
+            recipe.AddIngredient(ModContent.ItemType<NobleRadience>());
             recipe.AddIngredient(ItemID.PlatinumCrown);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);

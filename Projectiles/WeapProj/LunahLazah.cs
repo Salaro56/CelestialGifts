@@ -29,7 +29,7 @@ namespace CelestialGifts.Projectiles.WeapProj
             projectile.light = 0.9f;
             projectile.alpha = 128;
             projectile.rotation += (float)projectile.direction * 0.8f;
-            int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width + 4, projectile.height + 4, mod.DustType<EtherealFlame>(), projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f); //Spawns dust
+            int DustID = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width + 4, projectile.height + 4, ModContent.DustType<EtherealFlame>(), projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 120, default(Color), 0.75f); //Spawns dust
             Main.dust[DustID].noGravity = true; //Makes dust not fall
             if (projectile.timeLeft % 15 == 0)
             {

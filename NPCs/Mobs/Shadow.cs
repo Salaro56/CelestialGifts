@@ -15,7 +15,7 @@ namespace CelestialGifts.NPCs.Mobs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Shadow");
-            Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Reaper];
+            Main.npcFrameCount[npc.type] = 3;
         }
 
         public override void SetDefaults()
@@ -30,8 +30,8 @@ namespace CelestialGifts.NPCs.Mobs
             npc.value = 60f;
             npc.knockBackResist = 1f;
             npc.aiStyle = 3;
-            aiType = NPCID.Reaper;
-            animationType = NPCID.Reaper;
+            aiType = NPCID.Wraith;
+            animationType = NPCID.Wraith;
             npc.noGravity = true;
             npc.noTileCollide = true;
             npc.stepSpeed = 10f;
@@ -50,7 +50,7 @@ namespace CelestialGifts.NPCs.Mobs
 
             for (int i = 0; i < 1; i++)
             {
-                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<DreamDust>(), npc.velocity.X, npc.velocity.Y, 230, Color.Black);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, ModContent.DustType<DreamDust>(), npc.velocity.X, npc.velocity.Y, 230, Color.Black);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
                 Main.dust[dust].noGravity = false; //this make so the dust is effected by gravity
                 Main.dust[dust].velocity *= 1f;
             }
@@ -74,7 +74,7 @@ namespace CelestialGifts.NPCs.Mobs
         {
             for (int i = 0; i < 20; i++) //this i a for loop tham make the dust spawn , the higher is the value the more dust will spawn
             {
-                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<DreamDust>(), npc.velocity.X * 1.2f, npc.velocity.Y * 1.2f, 120, default(Color), 2.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, ModContent.DustType<DreamDust>(), npc.velocity.X * 1.2f, npc.velocity.Y * 1.2f, 120, default(Color), 2.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
                 Main.dust[dust].noGravity = true; //this make so the dust has no gravity
                 Main.dust[dust].velocity *= 0.5f;
             }

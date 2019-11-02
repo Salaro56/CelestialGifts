@@ -18,7 +18,7 @@ namespace CelestialGifts
             {
                 if(Main.rand.NextFloat() < .0050)
                 {
-                    Item.NewItem(npc.getRect(), mod.ItemType<Eclipse_Core>());
+                    Item.NewItem(npc.getRect(), ModContent.ItemType<Eclipse_Core>());
                 }
             }
 
@@ -26,7 +26,7 @@ namespace CelestialGifts
             {
                 if (Main.rand.NextFloat() < .05)
                 {
-                    Item.NewItem(npc.getRect(), mod.ItemType<StaffOfFire>());
+                    Item.NewItem(npc.getRect(), ModContent.ItemType<StaffOfFire>());
                 }
             }
 
@@ -34,7 +34,7 @@ namespace CelestialGifts
             {
                 if (Main.rand.NextFloat() < .02)
                 {
-                    Item.NewItem(npc.getRect(), mod.ItemType<Zombow>());
+                    Item.NewItem(npc.getRect(), ModContent.ItemType<Zombow>());
                 }
             }
         }

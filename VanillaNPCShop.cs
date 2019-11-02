@@ -18,12 +18,12 @@ namespace YourModName.NPCs
                     {
                         if(Main.rand.Next(5) == 0)
                         {
-                            shop.item[nextSlot].SetDefaults(mod.ItemType<Blackheart>());
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Blackheart>());
                             nextSlot++;
                         }
                         if (Main.rand.Next(10) == 0)
                         {
-                            shop.item[nextSlot].SetDefaults(mod.ItemType<LokiEgg>());
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<LokiEgg>());
                             nextSlot++;
                         }
                         shop.item[nextSlot].SetDefaults(ItemID.CobaltShield);    //this is an example of how to add a terraria item
@@ -47,7 +47,7 @@ namespace YourModName.NPCs
                     {    //This make that the npc will always sell this
                         if(Main.rand.Next(10) == 0)
                         {
-                            shop.item[nextSlot].SetDefaults(mod.ItemType<LokiEgg>());
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<LokiEgg>());
                             nextSlot++;
                         }
                         else if(Main.rand.Next(10) == 1)

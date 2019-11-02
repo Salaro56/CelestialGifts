@@ -32,7 +32,7 @@ namespace CelestialGifts.Items.Weapons
             item.useAnimation = 20;
             item.UseSound = SoundID.Item13;
             item.useStyle = 5;
-            item.shoot = mod.ProjectileType<SilverArrow>();
+            item.shoot = ModContent.ProjectileType<SilverArrow>();
             item.shootSpeed = 2f;
             item.value = Item.buyPrice(0, 5, 0, 0);
             item.scale = 0.7f;

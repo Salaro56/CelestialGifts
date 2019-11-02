@@ -31,7 +31,7 @@ namespace CelestialGifts.Items.Weapons
             item.useAnimation = 25;
             item.UseSound = SoundID.Item20;
             item.autoReuse = false;
-            item.shoot = mod.ProjectileType<WiltingFire>();
+            item.shoot = ModContent.ProjectileType<WiltingFire>();
             item.shootSpeed = 5f;
             item.magic = true;
             item.crit = 5;

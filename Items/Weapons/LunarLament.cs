@@ -34,14 +34,14 @@ namespace CelestialGifts.Items.Weapons
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
             item.shootSpeed = 6f;
-            item.shoot = mod.ProjectileType<LostMoonPages>();
+            item.shoot = ModContent.ProjectileType<LostMoonPages>();
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Hellstone, 15);
             recipe.AddIngredient(ItemID.Book);
-            recipe.AddIngredient(mod.ItemType<LunarBlast>());
+            recipe.AddIngredient(ModContent.ItemType<LunarBlast>());
             recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this);
             recipe.AddRecipe();

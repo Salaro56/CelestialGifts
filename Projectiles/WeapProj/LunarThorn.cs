@@ -35,7 +35,7 @@ namespace CelestialGifts.Projectiles.WeapProj       //We need this to basically 
 
             for (int i = 0; i < 20; i++) //this i a for loop tham make the dust spawn , the higher is the value the more dust will spawn
             {
-                int dust = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, mod.DustType<EtherealFlame>(), projectile.velocity.X * 1.2f, projectile.velocity.Y * 1.2f, 120, default(Color), 3.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                int dust = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, ModContent.DustType<EtherealFlame>(), projectile.velocity.X * 1.2f, projectile.velocity.Y * 1.2f, 120, default(Color), 3.50f);   //this make so when this projectile disappear will spawn dust, change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
                 Main.dust[dust].noGravity = true; //this make so the dust has no gravity
                 Main.dust[dust].velocity *= 2.5f;
             }
@@ -62,9 +62,9 @@ namespace CelestialGifts.Projectiles.WeapProj       //We need this to basically 
                         shootToY *= distance * 5;
                         int damage = 100;  //this is the projectile2 damage                   
                                           //Shoot projectile and set ai back to 0
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, mod.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
-                        Projectile.NewProjectile(projectile.Center.X * 2, projectile.Center.Y * 2, shootToX, shootToY, mod.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f);
-                        Projectile.NewProjectile(projectile.Center.X * 0.5f, projectile.Center.Y * 0.5f, shootToX, shootToY, mod.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, ModContent.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
+                        Projectile.NewProjectile(projectile.Center.X * 2, projectile.Center.Y * 2, shootToX, shootToY, ModContent.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X * 0.5f, projectile.Center.Y * 0.5f, shootToX, shootToY, ModContent.ProjectileType<MoonShard>(), damage, 0, Main.myPlayer, 0f, 0f);
                         Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 24); //24 is the sound, so when this projectile is shot will make that sound
                         projectile.ai[0] = 0f;
                     }
@@ -77,7 +77,7 @@ namespace CelestialGifts.Projectiles.WeapProj       //We need this to basically 
         {
             for (int i = 0; i < 1; i++)
             {
-                int dust = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, mod.DustType<EtherealFlame>(), projectile.velocity.X * 1.2f, projectile.velocity.Y * 1.2f, 120, default(Color), 1.50f);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
+                int dust = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, ModContent.DustType<EtherealFlame>(), projectile.velocity.X * 1.2f, projectile.velocity.Y * 1.2f, 120, default(Color), 1.50f);   //this make so when this projectile is active has dust around , change PinkPlame to what dust you want from Terraria, or add mod.DustType("CustomDustName") for your custom dust
                 Main.dust[dust].noGravity = true; //this make so the dust is effected by gravity
                 Main.dust[dust].velocity *= 0.9f;
             }
@@ -108,7 +108,7 @@ namespace CelestialGifts.Projectiles.WeapProj       //We need this to basically 
                         shootToY *= distance * 3;
                         int damage = 150;  //this is the projectile2 damage                   
                                           //Shoot projectile and set ai back to 0
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX * 5, shootToY * 5, mod.ProjectileType<LunahLazah>(), damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX * 5, shootToY * 5, ModContent.ProjectileType<LunahLazah>(), damage, 0, Main.myPlayer, 0f, 0f); //Spawning a projectile mod.ProjectileType("FlamethrowerProj") is an example of how to spawn a modded projectile. if you want to shot a terraria prjectile add instead ProjectileID.Nameofterrariaprojectile
                         Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 24); //24 is the sound, so when this projectile is shot will make that sound
                         projectile.ai[0] = 0f;
                     }

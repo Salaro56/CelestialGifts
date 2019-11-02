@@ -69,7 +69,7 @@ namespace CelestialGifts.NPCs.Mobs
 
         public void Shoot()
         {
-            int type = mod.ProjectileType<CrownOfThorns>();
+            int type = ModContent.ProjectileType<CrownOfThorns>();
             Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
             float magnitude = Magnitude(velocity);
             if (magnitude > 0)
@@ -100,7 +100,7 @@ namespace CelestialGifts.NPCs.Mobs
             {
                 for (int i = 0; i < 50; i++)
                 {
-                    int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), 150, 165, mod.DustType<HolyLight>(), npc.velocity.X, npc.velocity.Y, 20, default(Color), 4f);
+                    int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), 150, 165, ModContent.DustType<HolyLight>(), npc.velocity.X, npc.velocity.Y, 20, default(Color), 4f);
                     Main.dust[dust].noGravity = true;
                     Main.dust[dust].velocity *= 2f;
                 }

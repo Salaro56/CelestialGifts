@@ -27,7 +27,7 @@ namespace CelestialGifts.Items.Weapons       ///We need this to basically indica
             item.rare = 8;   //The color the title of your Weapon when hovering over it ingame  
             item.UseSound = SoundID.Item44;   //The sound played when using your Weapon
             item.autoReuse = false;   //Weather your Weapon will be used again after use while holding down, if false you will need to click again after use to use it again.
-            item.shoot = mod.ProjectileType<LunarThorn>();
+            item.shoot = ModContent.ProjectileType<LunarThorn>();
             item.magic = true;    //This defines if it does Summon damage and if its effected by Summon increasing Armor/Accessories.
             item.sentry = true; //tells the game that this is a sentry
             item.maxStack = 1;
@@ -37,7 +37,7 @@ namespace CelestialGifts.Items.Weapons       ///We need this to basically indica
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.HallowedBar, 24);
             recipe.AddIngredient(ItemID.Sapphire, 15);
-            recipe.AddIngredient(mod.ItemType<LunarLament>());
+            recipe.AddIngredient(ModContent.ItemType<LunarLament>());
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();

@@ -17,7 +17,7 @@ namespace CelestialGifts.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.damage = 200;
-            item.shoot = mod.ProjectileType<DivineComet>();
+            item.shoot = ModContent.ProjectileType<DivineComet>();
             item.shootSpeed = 20f;
 			item.melee = true;
             item.width = 100;

@@ -27,7 +27,7 @@ namespace CelestialGifts.Items.Ammo
             item.knockBack = 1f;
             item.value = 50;
             item.rare = 2;
-            item.shoot = mod.ProjectileType<Energy_Shot>();
+            item.shoot = ModContent.ProjectileType<Energy_Shot>();
             item.ammo = mod.ItemType("Energy_Clip");
 
         }

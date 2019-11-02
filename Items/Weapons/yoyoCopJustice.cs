@@ -10,7 +10,8 @@ namespace CelestialGifts.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("For our buddy who loves to see himself");
+            Tooltip.SetDefault("For our buddy who loves to see himself "
+                + "/n Dev Item");
             DisplayName.SetDefault("Yo-Yo Cop's Justice");
             // These are all related to gamepad controls and don't seem to affect anything else
             ItemID.Sets.Yoyo[item.type] = true;
@@ -37,7 +38,7 @@ namespace CelestialGifts.Items.Weapons
 
             item.UseSound = SoundID.Item1;
             item.value = Item.sellPrice(copper: 50);
-            item.shoot = mod.ProjectileType<yoyoCopProjectile>();
+            item.shoot = ModContent.ProjectileType<yoyoCopProjectile>();
         }
 
         public override void AddRecipes()

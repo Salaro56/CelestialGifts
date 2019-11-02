@@ -34,7 +34,7 @@ namespace CelestialGifts.Items.Weapons
             item.rare = 8;
             item.shootSpeed = 15f;
             item.autoReuse = true;
-            item.useAmmo = mod.ItemType<Energy_Clip>();
+            item.useAmmo = ModContent.ItemType<Energy_Clip>();
             item.UseSound = SoundID.Item12;
             item.shoot = 10;
         }

@@ -27,7 +27,7 @@ namespace CelestialGifts.Items.Ammo
             item.value = 10000;
             item.rare = 6;
             item.ammo = AmmoID.Arrow;
-            item.shoot = mod.ProjectileType<PiercingLight>();
+            item.shoot = ModContent.ProjectileType<PiercingLight>();
             item.scale = 0.5f;
         }
 
