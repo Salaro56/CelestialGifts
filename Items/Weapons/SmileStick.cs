@@ -36,7 +36,7 @@ namespace CelestialGifts.Items.Weapons
             item.noMelee = true;
             item.knockBack = 3;
             item.mana = 15;
-            item.UseSound = mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/MrSmileLaugh").WithVolume(.7f);
+            item.UseSound = SoundID.Item44;
             item.shoot = ProjectileType<MrSmiley>();
             item.shootSpeed = 10f;
             item.buffType = BuffType<MrSmileyBuff>();
