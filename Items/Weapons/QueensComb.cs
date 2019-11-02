@@ -71,7 +71,7 @@ namespace CelestialGifts.Items.Weapons
             recipe.AddIngredient(ItemID.BeeWax, 15);
             recipe.AddIngredient(ItemID.Stinger, 5);
             recipe.AddIngredient(ItemID.BottledHoney, 3);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
