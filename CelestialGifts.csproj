@@ -8,6 +8,9 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="Items\Weapons\Magic\" />
+    <Folder Include="Items\Weapons\Summon\" />
+    <Folder Include="Items\Weapons\Range\" />
     <Folder Include="Sounds\" />
   </ItemGroup>
   <Target Name="BuildMod" AfterTargets="Build">

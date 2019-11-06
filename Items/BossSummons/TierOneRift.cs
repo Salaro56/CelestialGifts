@@ -54,6 +54,7 @@ namespace CelestialGifts.Items.BossSummons
             ModRecipe recipe = new ModRecipe(mod); //Creating a new recipe to be added to 
             recipe.AddIngredient(ItemID.SoulofNight, 10);
             recipe.AddIngredient(ItemID.SoulofLight, 10);
+            recipe.AddIngredient(ItemID.SoulofFright, 10);
             recipe.AddIngredient(ModContent.GetInstance<NightmareEssence>(), 10);
             recipe.AddTile(TileID.Bookcases);
             recipe.SetResult(this); //Set the result of the recipe to this item (this refers to the class itself)

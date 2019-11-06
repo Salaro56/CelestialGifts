@@ -36,7 +36,7 @@ namespace CelestialGifts.Items.Ammo
         public override void AddRecipes()
         {
                 ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(ItemID.FallenStar);
+                recipe.AddIngredient(ModContent.ItemType<Energy_Clip>());
                 recipe.AddIngredient(ItemID.ChlorophyteBullet, 5);
                 recipe.AddTile(TileID.MythrilAnvil);
                 recipe.SetResult(this, 15);

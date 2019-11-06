@@ -25,7 +25,7 @@ namespace CelestialGifts.NPCs.Bosses
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pain");
-            Main.npcFrameCount[npc.type] = 1;
+            Main.npcFrameCount[npc.type] = 9;
         }
 
         public override void SetDefaults()
@@ -142,7 +142,7 @@ namespace CelestialGifts.NPCs.Bosses
             npc.frameCounter += 1;
             npc.frameCounter %= 20;
             int frame = (int)(npc.frameCounter / 2.0);
-            if (frame >= Main.npcFrameCount[npc.type]) frame = 0;
+            if (frame >= Main.npcFrameCount[npc.type]) frame = 9;
             npc.frame.Y = frame * frameHeight;
         }
 

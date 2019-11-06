@@ -13,7 +13,8 @@ namespace CelestialGifts.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Event Horizon");
-            Tooltip.SetDefault("Leading technology mixed with celestial energy to create a deadly killing machine");         
+            Tooltip.SetDefault("Leading technology mixed with celestial energy to create a deadly killing machine. " +
+                "\nRequires energy clips to fire");         
         }
 
 

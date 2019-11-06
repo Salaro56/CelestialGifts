@@ -197,16 +197,13 @@ namespace CelestialGifts.NPCs.Bosses
             {
                 npc.DropBossBags();
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SilverMirror>());
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TierOneRift>());
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<NightmareEssence>(), 20);
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LurkingShadow>(), 25);
             }
             else
             {
-                if (Main.rand.Next(3) == 0) // For items that you want to have a chance to drop 
-                {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Blackheart"));
-                }
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Essence of Nightmares"), 15); // For Items that you want to always drop
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Lurking Shadow"), 20);
             }
         }
 

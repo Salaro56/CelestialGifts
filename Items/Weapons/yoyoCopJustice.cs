@@ -10,8 +10,8 @@ namespace CelestialGifts.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("For our buddy who loves to see himself "
-                + "/n Dev Item");
+            Tooltip.SetDefault("For our buddy who loves justice. "
+                + "\n Dev Item");
             DisplayName.SetDefault("Yo-Yo Cop's Justice");
             // These are all related to gamepad controls and don't seem to affect anything else
             ItemID.Sets.Yoyo[item.type] = true;
@@ -22,14 +22,14 @@ namespace CelestialGifts.Items.Weapons
         public override void SetDefaults()
         {
             item.useStyle = 5;
-            item.width = 50;
-            item.height = 50;
+            item.width = 20;
+            item.height = 20;
             item.useAnimation = 100;
             item.useTime = 100;
             item.shootSpeed = 20f;
             item.knockBack = 2.5f;
             item.damage = 12;
-            item.rare = 6;
+            item.rare = -1;
 
             item.melee = true;
             item.channel = true;

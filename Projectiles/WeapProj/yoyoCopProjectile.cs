@@ -6,6 +6,7 @@ namespace CelestialGifts.Projectiles.WeapProj
 {
     public class yoyoCopProjectile : ModProjectile
     {
+        public bool isRed = true;
         public override void SetStaticDefaults()
         {
             // The following sets are only applicable to yoyo that use aiStyle 99.
@@ -23,14 +24,15 @@ namespace CelestialGifts.Projectiles.WeapProj
         public override void SetDefaults()
         {
             projectile.extraUpdates = 0;
-            projectile.width = 130;
-            projectile.height = 173;
+            projectile.width = 20;
+            projectile.height = 20;
             // aiStyle 99 is used for all yoyos, and is Extremely suggested, as yoyo are extremely difficult without them
             projectile.aiStyle = 99;
             projectile.friendly = true;
             projectile.penetrate = -1;
             projectile.melee = true;
-            projectile.scale = 0.5f;            
+            projectile.scale = 1;
+            drawOriginOffsetY = -10;
         }
         // notes for aiStyle 99: 
         // localAI[0] is used for timing up to YoyosLifeTimeMultiplier
@@ -39,6 +41,22 @@ namespace CelestialGifts.Projectiles.WeapProj
         // ai[0] is -1f once YoyosLifeTimeMultiplier is reached, when the player is stoned/frozen, when the yoyo is too far away, or the player is no longer clicking the shoot button.
         // ai[0] being negative makes the yoyo move back towards the player
         // Any AI method can be used for dust, spawning projectiles, etc specific to your yoyo.
+
+        public override void AI()
+        {
+            if (isRed == true)
+            {
+                Lighting.AddLight(projectile.position, 1, 0, 0);
+            }
+            else
+            {
+                Lighting.AddLight(projectile.position, 0, 0, 1);
+            }
+        }
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+            isRed = !isRed;
+        }
 
         public override void PostAI()
         {
