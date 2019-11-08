@@ -37,6 +37,7 @@ namespace CelestialGifts.NPCs.Mobs
             aiType = NPCID.Demon;
             animationType = NPCID.Demon;
             npc.noGravity = true;
+            npc.netUpdate = true;
         }
 
         public override void AI()
@@ -47,7 +48,7 @@ namespace CelestialGifts.NPCs.Mobs
         private void Target()
         {
             player = Main.player[npc.target];
-
+            npc.netUpdate = true;
             Move(new Vector2(0, -50f)); // Calls the Move Method
             //Attacking
             npc.ai[1] -= 1f; // Subtracts 1 from the ai.

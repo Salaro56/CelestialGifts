@@ -26,11 +26,12 @@ namespace CelestialGifts.Projectiles.Minions
             projectile.alpha = 75;
             projectile.width = 20;
             projectile.height = 20;
-            projectile.aiStyle = 26;
             projectile.penetrate = -1;
             projectile.timeLeft *= 5;
             projectile.minion = true;
             projectile.minionSlots = 1f;
+            projectile.CloneDefaults(ProjectileID.BabySlime);
+            projectile.friendly = true;
         }
     }
 }
