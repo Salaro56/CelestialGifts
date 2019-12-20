@@ -10,8 +10,7 @@ namespace CelestialGifts.Items.Weapons
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("For our buddy who loves justice. "
-                + "\n Dev Item");
+            Tooltip.SetDefault("Walk the dog of justice!");
             DisplayName.SetDefault("Yo-Yo Cop's Justice");
             // These are all related to gamepad controls and don't seem to affect anything else
             ItemID.Sets.Yoyo[item.type] = true;
@@ -27,9 +26,9 @@ namespace CelestialGifts.Items.Weapons
             item.useAnimation = 100;
             item.useTime = 100;
             item.shootSpeed = 20f;
-            item.knockBack = 2.5f;
-            item.damage = 12;
-            item.rare = -1;
+            item.knockBack = 1.2f;
+            item.damage = 200;
+            item.rare = -12;
 
             item.melee = true;
             item.channel = true;
@@ -40,18 +39,5 @@ namespace CelestialGifts.Items.Weapons
             item.value = Item.sellPrice(copper: 50);
             item.shoot = ModContent.ProjectileType<yoyoCopProjectile>();
         }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.WoodYoyo, 2);
-            recipe.AddIngredient(ItemID.StoneBlock, 20);
-            recipe.AddIngredient(ItemID.Wood, 20);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-                
-        }
-
     }
 }

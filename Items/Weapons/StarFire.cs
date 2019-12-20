@@ -22,8 +22,8 @@ namespace CelestialGifts.Items.Weapons
         {
             item.damage = 40;
             item.ranged = true;
-            item.width = 150;
-            item.height = 70;
+            item.width = 98;
+            item.height = 30;
             item.maxStack = 1;
             item.useTime = 5;
             item.useAnimation = 5;

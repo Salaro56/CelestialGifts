@@ -20,7 +20,6 @@ namespace CelestialGifts.NPCs.Mobs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Nightmare Spawn");
-            Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Demon];
         }
 
         public override void SetDefaults()
@@ -34,10 +33,10 @@ namespace CelestialGifts.NPCs.Mobs
             npc.DeathSound = SoundID.NPCDeath6;
             npc.value = 100f;
             npc.knockBackResist = 1f;
-            aiType = NPCID.Demon;
-            animationType = NPCID.Demon;
+            aiType = NPCID.Wraith;
             npc.noGravity = true;
             npc.netUpdate = true;
+            npc.noTileCollide = true;
         }
 
         public override void AI()
@@ -49,18 +48,12 @@ namespace CelestialGifts.NPCs.Mobs
         {
             player = Main.player[npc.target];
             npc.netUpdate = true;
-            Move(new Vector2(0, -50f)); // Calls the Move Method
-            //Attacking
-            npc.ai[1] -= 1f; // Subtracts 1 from the ai.
-            if (npc.ai[1] <= 0f)
-            {
-                Shoot();
-            }
+            Move(new Vector2(0, -20)); // Calls the Move Method
         }
         private void Move(Vector2 offset)
         {
             speed = 5f; // Sets the max speed of the npc.
-            Vector2 moveTo = player.Center + offset * 2 + new Vector2(0, -20); // Gets the point that the npc will be moving to.
+            Vector2 moveTo = player.Center + offset; // Gets the point that the npc will be moving to.
             Vector2 move = moveTo - npc.Center;
             float magnitude = Magnitude(move);
             if (magnitude > speed)
@@ -76,22 +69,7 @@ namespace CelestialGifts.NPCs.Mobs
             }
             npc.velocity = move;
         }
-        private void Shoot()
-        {
-            int type = ModContent.ProjectileType<NightmareNeedle>();
-            Vector2 velocity = player.Center - npc.Center; // Get the distance between target and npc.
-            float magnitude = Magnitude(velocity);
-            if (magnitude > 0)
-            {
-                velocity *= 4f / magnitude;
-            }
-            else
-            {
-                velocity = new Vector2(0f, 5f);
-            }
-            Projectile.NewProjectile(npc.Center, velocity, type, npc.damage = 10, 0.5f);
-            npc.ai[1] = 200f;
-        }
+
         private float Magnitude(Vector2 mag)
         {
             return (float)Math.Sqrt(mag.X * mag.X + mag.Y * mag.Y);
@@ -106,15 +84,6 @@ namespace CelestialGifts.NPCs.Mobs
             return 0f;
         }
 
-        public override void FindFrame(int frameHeight)
-        {
-            npc.frameCounter -= 0.9f;
-            npc.frameCounter %= Main.npcFrameCount[npc.type];
-            int frame = (int)npc.frameCounter;
-            npc.frame.Y = frame * frameHeight;
-            npc.spriteDirection = npc.direction;
-        }
-
         public override void HitEffect(int hitDirection, double damage)
         {
             for (int i = 0; i < 20; i++) //this i a for loop tham make the dust spawn , the higher is the value the more dust will spawn
@@ -125,6 +94,10 @@ namespace CelestialGifts.NPCs.Mobs
             }
         }
 
+        public override void OnHitPlayer(Player target, int damage, bool crit)
+        {
+            player.AddBuff(BuffID.Obstructed, 120);
+        }
 
         public override void NPCLoot()
         {

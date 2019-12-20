@@ -17,6 +17,7 @@ namespace CelestialGifts.NPCs.Mobs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Angel");
+            Main.npcFrameCount[npc.type] = 6;
         }
 
         public override void SetDefaults()
@@ -54,10 +55,7 @@ namespace CelestialGifts.NPCs.Mobs
             shotTimer -= 1f; // Subtracts 1 from the ai.
             if (shotTimer <= 0f)
             {
-                for (int s = 0; s < 3; s++)
-                {
-                    Shoot();
-                }
+                Shoot();
             }
         }
 
@@ -80,8 +78,16 @@ namespace CelestialGifts.NPCs.Mobs
             {
                 velocity = new Vector2(0f, 5f);
             }
-            Projectile.NewProjectile(npc.Center, new Vector2(velocity.X, (velocity.Y + Main.rand.Next(-5, 5))), type, 20, 2f);
+            Projectile.NewProjectile(npc.Center, new Vector2(velocity.X, velocity.Y), type, 20, 2f);
             shotTimer = 200f;
+        }
+        public override void FindFrame(int frameHeight)
+        {
+            npc.frameCounter += 1;
+            npc.frameCounter %= 100;
+            int frame = (int)(npc.frameCounter / 6);
+            if (frame >= Main.npcFrameCount[npc.type]) frame = 0;
+            npc.frame.Y = frame * frameHeight;
         }
 
         private float Magnitude(Vector2 mag)

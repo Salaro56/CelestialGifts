@@ -30,7 +30,6 @@ namespace CelestialGifts.Projectiles.HostileProj
             projectile.timeLeft = 500;
             projectile.scale = 2f;
             projectile.damage = 20;
-            drawOriginOffsetX = 10;
             drawOriginOffsetY = 10;
         }
 
@@ -41,7 +40,7 @@ namespace CelestialGifts.Projectiles.HostileProj
                 int dust = Dust.NewDust(new Vector2(projectile.position.X - 20, projectile.position.Y), projectile.width, projectile.height, ModContent.DustType<HolyLight>(), projectile.velocity.X, projectile.velocity.Y, 0, default(Color), 1f);
                 Main.dust[dust].noGravity = true;
             }
-            projectile.rotation += 0.4f * (float)projectile.direction; 
+            projectile.rotation += 0.4f * (float)projectile.direction;
         }
     }
 }

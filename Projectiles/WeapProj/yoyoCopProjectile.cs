@@ -32,7 +32,6 @@ namespace CelestialGifts.Projectiles.WeapProj
             projectile.penetrate = -1;
             projectile.melee = true;
             projectile.scale = 1;
-            drawOriginOffsetY = -10;
         }
         // notes for aiStyle 99: 
         // localAI[0] is used for timing up to YoyosLifeTimeMultiplier
@@ -53,9 +52,18 @@ namespace CelestialGifts.Projectiles.WeapProj
                 Lighting.AddLight(projectile.position, 0, 0, 1);
             }
         }
+
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
             isRed = !isRed;
+            if (isRed == false)
+            {
+                target.AddBuff(BuffID.OnFire, 120);
+            }
+            else
+            {
+                target.AddBuff(BuffID.Frostburn, 120);
+            }
         }
 
         public override void PostAI()
