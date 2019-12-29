@@ -13,15 +13,14 @@ namespace CelestialGifts.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Event Horizon");
-            Tooltip.SetDefault("Leading technology mixed with celestial energy to create a deadly killing machine. " +
-                "\nRequires energy clips to fire");         
+            Tooltip.SetDefault("Leading technology mixed with celestial energy to create a deadly killing machine.");         
         }
 
 
 
         public override void SetDefaults()
         {
-            item.damage = 80;
+            item.damage = 66;
             item.ranged = true;
             item.width = 100;
             item.height = 41;
@@ -37,7 +36,7 @@ namespace CelestialGifts.Items.Weapons
             item.shootSpeed = 30f;
             item.autoReuse = true;
             item.UseSound = SoundID.Item12;
-            item.useAmmo = ModContent.ItemType<Energy_Clip>();
+            item.useAmmo = AmmoID.Bullet;
             item.shoot = ModContent.ProjectileType<Nebula>();
             item.crit = 60;
         }

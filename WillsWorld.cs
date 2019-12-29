@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System;
 using Terraria.ModLoader.IO;
 using System.IO;
+using CelestialGifts.Items.Weapons.Melee.Yoyo;
 
 namespace WillsWorld
 {
@@ -67,6 +68,31 @@ namespace WillsWorld
             downedPain = flags[0];
         }
 
+        public override void PostWorldGen()
+        {
+            // Place some items in Ice Chests
+
+            int[] itemsToPlaceInChests = { ModContent.ItemType<EnchantedYoyo>() };
+            int itemsToPlaceInChestsChoice = 0;
+            for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
+            {
+                Chest chest = Main.chest[chestIndex];
+                // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Ice Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. 
+                if (chest != null && Main.tile[chest.x, chest.y].type == TileID.Containers && Main.tile[chest.x, chest.y].frameX == 1 * 36 && Main.rand.Next(5) == 1)
+                {
+                    for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
+                    {
+                        if (chest.item[inventoryIndex].type == 0)
+                        {
+                            chest.item[inventoryIndex].SetDefaults(itemsToPlaceInChests[itemsToPlaceInChestsChoice]);
+                            itemsToPlaceInChestsChoice = (itemsToPlaceInChestsChoice + 1) % itemsToPlaceInChests.Length;
+                            // Alternate approach: Random instead of cyclical: chest.item[inventoryIndex].SetDefaults(Main.rand.Next(itemsToPlaceInIceChests));
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 
     }
 }

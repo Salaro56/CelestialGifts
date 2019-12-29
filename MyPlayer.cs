@@ -1,6 +1,7 @@
 ﻿using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria;
+using CelestialGifts.Items.Weapons.Range;
 
 namespace CelestialGifts
 {
@@ -18,6 +19,18 @@ namespace CelestialGifts
             MrSmiles = false;
             SlimePet = false;
             DQueen = false;
+        }
+
+        public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
+        {
+            if(junk)
+            {
+                return;
+            }
+            if(player.ZoneBeach && liquidType == 0 && Main.rand.Next(25) == 1)
+            {
+                caughtType = ModContent.ItemType<BassCannon>();
+            }
         }
     }
 }

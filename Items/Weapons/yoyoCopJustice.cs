@@ -36,7 +36,7 @@ namespace CelestialGifts.Items.Weapons
             item.noUseGraphic = true;
 
             item.UseSound = SoundID.Item1;
-            item.value = Item.sellPrice(copper: 50);
+            item.value = Item.sellPrice(gold: 30);
             item.shoot = ModContent.ProjectileType<yoyoCopProjectile>();
         }
     }

@@ -28,7 +28,7 @@ namespace CelestialGifts.NPCs.Mobs
             npc.HitSound = SoundID.NPCDeath6;
             npc.DeathSound = SoundID.NPCDeath6;
             npc.value = 60f;
-            npc.knockBackResist = 1f;
+            npc.knockBackResist = 3f;
             npc.aiStyle = 3;
             aiType = NPCID.Wraith;
             animationType = NPCID.Wraith;

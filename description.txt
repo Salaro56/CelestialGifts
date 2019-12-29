@@ -1,5 +1,11 @@
-**Development on this mod will end here, beyond a few bug fixes and minor changes I won't be able to focus on this mod anymore inbetween school and work as I was doing this entirely free of charge. Thank you for joining me on this journey**
+Note that this mod is still a work in progress and will constantly be updated to include more features
 
-This mod adds new mobs, items, and bosses. 
-Most of the items are jokes but there is three sets for the melee, magic, and range class that evolves with you as you progress throughout the game.
-You need to constantly update it and work on it so you can be as strong as possible.
+Includes:
+40+ New Items
+5 Brand new buffs
+12 New NPCs
+And much more coming
+
+If you're interested in supporting me in the development of this mod consider donating to my patreon with the link both in my discord and on the mod's wiki page.
+Donating will help me continue making content that I love to make without worrying about ending up on the street cuz I'm a broke boy.
+Thank you all so much for supporting my mod and helping me pass 30,000 downloads. Here's to 30,000 more!
