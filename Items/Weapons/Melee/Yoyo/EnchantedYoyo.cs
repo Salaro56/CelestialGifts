@@ -44,6 +44,24 @@ namespace CelestialGifts.Items.Weapons.Melee.Yoyo
             item.value = Item.sellPrice(copper: 50);
             item.shoot = ModContent.ProjectileType<EnchantProj>();
         }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodYoyo);
+            recipe.AddIngredient(ItemID.EnchantedSword);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodYoyo);
+            recipe.AddIngredient(ItemID.Diamond, 8);
+            recipe.AddIngredient(ItemID.Ruby, 8);
+            recipe.AddIngredient(ItemID.Sapphire, 8);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 
     class EnchantProj : ModProjectile

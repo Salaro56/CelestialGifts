@@ -8,7 +8,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Items\Weapons\Magic\" />
     <Folder Include="Items\Weapons\Summon\" />
     <Folder Include="Sounds\" />
   </ItemGroup>

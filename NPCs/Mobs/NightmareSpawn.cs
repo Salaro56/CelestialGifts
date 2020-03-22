@@ -20,11 +20,12 @@ namespace CelestialGifts.NPCs.Mobs
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Nightmare Spawn");
+            Main.npcFrameCount[npc.type] = 4;
         }
 
         public override void SetDefaults()
         {
-            npc.width = 32;
+            npc.width = 70;
             npc.height = 40;
             npc.damage = 40;
             npc.defense = 16;
@@ -92,6 +93,15 @@ namespace CelestialGifts.NPCs.Mobs
                 Main.dust[dust].noGravity = true; //this make so the dust has no gravity
                 Main.dust[dust].velocity *= 1f;
             }
+        }
+
+        public override void FindFrame(int frameHeight)
+        {
+            npc.frameCounter += 1;
+            npc.frameCounter %= 50;
+            int frame = (int)(npc.frameCounter / 4);
+            if (frame >= Main.npcFrameCount[npc.type]) frame = 0;
+            npc.frame.Y = frame * frameHeight;
         }
 
         public override void OnHitPlayer(Player target, int damage, bool crit)

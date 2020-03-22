@@ -30,7 +30,7 @@ namespace CelestialGifts.NPCs.Mobs
             npc.value = 60f;
             npc.knockBackResist = 1f;
             npc.aiStyle = 25;
-            aiType = NPCID.Mimic;
+            aiType = NPCID.Zombie;
             animationType = NPCID.Zombie;
             npc.noGravity = false;
             npc.stepSpeed = 10f;
